@@ -3,7 +3,6 @@
 [ext_resource path="res://Fireball/Ice_shot_1.wav" type="AudioStream" id=1]
 
 [node name="IceSound" type="AudioStreamPlayer2D"]
-position = Vector2( -9.2207, 2.45887 )
 stream = ExtResource( 1 )
 volume_db = -80.0
 autoplay = true
