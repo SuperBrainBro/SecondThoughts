@@ -167,8 +167,7 @@ script = ExtResource( 6 )
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player1/Camera2D"]
 visible = false
-position = Vector2( 0, -90 )
-scale = Vector2( 0.65, 0.65 )
+scale = Vector2( 0.75, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player1/Camera2D/Vignette"]
 modulate = Color( 1, 1, 1, 0.607843 )
@@ -182,8 +181,7 @@ script = ExtResource( 6 )
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player2/Camera2D"]
 visible = false
-position = Vector2( 0, 10 )
-scale = Vector2( 0.65, 0.65 )
+scale = Vector2( 0.75, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player2/Camera2D/Vignette"]
 modulate = Color( 1, 1, 1, 0.607843 )
