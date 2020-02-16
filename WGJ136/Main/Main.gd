@@ -48,8 +48,8 @@ func _process(_delta: float) -> void:
 		shader1.visible = player1.is_active
 		shader2.visible = player2.is_active
 		
-		player1.intendedFireMode = true
-		player2.intendedFireMode = false
+		player1.intendedFireMode = false
+		player2.intendedFireMode = true
 
 func _on_SpawnTimer_timeout():
 	for spawn_location in $"SpawnLocations".get_children():
