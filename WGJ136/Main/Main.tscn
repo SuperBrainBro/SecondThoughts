@@ -277,3 +277,14 @@ autostart = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 33.3201
+margin_top = 52.3602
+margin_right = 73.3201
+margin_bottom = 66.3602
+rect_scale = Vector2( 2, 2 )
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
