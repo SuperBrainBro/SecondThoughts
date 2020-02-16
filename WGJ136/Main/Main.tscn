@@ -213,7 +213,7 @@ __meta__ = {
 }
 
 [node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
-modulate = Color( 1, 1, 1, 0 )
+visible = false
 margin_left = 1.58667
 margin_right = 1029.59
 margin_bottom = 600.0

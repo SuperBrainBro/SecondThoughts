@@ -10,6 +10,7 @@ export var type: String = "ogre"
 export var max_health: float = 100
 
 export var health: float = max_health
+export var damage: float = 1 #damage per frame
 onready var spr: Sprite = $Sprite
 
 var target_player: Player
