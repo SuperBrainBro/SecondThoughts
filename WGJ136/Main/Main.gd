@@ -33,6 +33,7 @@ func _ready() -> void:
 	player1.intendedFireMode = false
 	player2.intendedFireMode = true
 	
+	$CanvasLayer/Control/GameOverScreen.hide()
 	$SpawnTimer.connect("timeout", self, "_on_SpawnTimer_timeout")
 	$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
 
