@@ -6,5 +6,8 @@ func _ready() -> void:
 
 func on_Heart_body_entered(body: PhysicsBody2D):
 	if body is Player:
-		body.health = 100
-		queue_free()
+		if body.health < 100:
+			body.health = 100
+			queue_free()
+		else:
+			print("You already have full health")
