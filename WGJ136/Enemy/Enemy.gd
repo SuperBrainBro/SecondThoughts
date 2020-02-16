@@ -7,6 +7,9 @@ onready var player2: Player = $"../../PlayerHolder/Player2"
 export var follow_speed: float = 30
 export var frozen: bool = false
 export var type: String = "ogre"
+export var max_health: float = 100
+
+export var health: float = max_health
 onready var spr: Sprite = $Sprite
 
 var target_player: Player
