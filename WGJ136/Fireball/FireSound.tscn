@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Fireball/fireball.wav" type="AudioStream" id=1]
+
+[node name="FireSound" type="AudioStreamPlayer2D"]
+position = Vector2( -9.2207, 0.988686 )
+stream = ExtResource( 1 )
+volume_db = -80.0
+autoplay = true
