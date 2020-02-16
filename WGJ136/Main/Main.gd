@@ -54,7 +54,7 @@ func _process(_delta: float) -> void:
 func _on_SpawnTimer_timeout():
 	for spawn_location in $"SpawnLocations".get_children():
 		var enemy: Enemy = ENEMY_SCENE.instance()
-		if randf() > .5:
+		if randf() > 0.5:
 			enemy.type = "ogre"
 		else:
 			enemy.type = "skeleton"
