@@ -1,18 +1,19 @@
 extends Area2D
-class_name Enemy
+class_name EnemyOld
 
-onready var player1 = $"../../PlayerHolder/Player1"
-onready var player2 = $"../../PlayerHolder/Player2"
+onready var player1: Player = $"../../PlayerHolder/Player1"
+onready var player2: Player = $"../../PlayerHolder/Player2"
 
-export var follow_speed: float
-export var damage: float
-export var max_health: float
-export var type: String
-export var frozen: bool
+export var follow_speed: float = 30
+export var frozen: bool = false
+export var type: String = "ogre"
+export var max_health: float = 100
 
-onready var health: float = max_health
+export var health: float = max_health
+export var damage: float = 1 #damage per frame
+onready var spr: Sprite = $Sprite
 
-var target_player
+var target_player: Player
 
 func _ready() -> void:
 	randomize()
@@ -21,10 +22,21 @@ func _ready() -> void:
 	player1.connect("died", self, "queue_free")
 	player2.connect("died", self, "queue_free")
 
+func _process(delta: float) -> void:
+	match(type):
+		"ogre":
+			$Sprite.texture = preload("res://Enemy/FixedSprites/Ogre1.png")
+			spr.look_at(target_player.position)
+			follow_speed = 30
+		"skeleton":
+			$Sprite.texture = preload("res://Enemy/FixedSprites/Skeleton1.png")
+			spr.look_at(target_player.position)
+			follow_speed = 60
+
 func _physics_process(delta: float) -> void:
 	if frozen == true:
 		return
-	if target_player:
+	if target_player:		
 		position += position.direction_to(target_player.position) * delta * follow_speed
 		var bodies = get_overlapping_bodies()
 		for body in bodies:
@@ -42,6 +54,6 @@ func on_Enemy_area_entered(area: Area2D):
 			area.queue_free()
 			frozen = true
 			$FreezeTimer.start(3)
-			
+
 func _on_FreezeTimer_timeout():
 	frozen = false
