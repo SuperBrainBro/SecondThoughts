@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Main/Main.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Heart/Heart/Heart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Main/Camera2D.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "GameOver"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/GameOverScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 350.111
+margin_top = 351.635
+margin_right = 390.111
+margin_bottom = 391.635
+rect_scale = Vector2( -17.8209, -17.3205 )
+color = Color( 0.596078, 0.596078, 0.596078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="FireballHolder" type="Node" parent="World"]
+
+[node name="EnemyHolder" type="Node" parent="World"]
+
+[node name="Enemy" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( 287.771, -45.2138 )
+
+[node name="Enemy1" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( -215.724, 107.329 )
+
+[node name="Enemy2" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( -313.807, -286.852 )
+
+[node name="Enemy3" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( 285.793, 279.437 )
+
+[node name="Enemy4" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( 134.043, -281.3 )
+
+[node name="Enemy5" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( -84.3302, 292.391 )
+
+[node name="PlayerHolder" type="Node" parent="World"]
+
+[node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
+position = Vector2( 0, 50 )
+
+[node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player1"]
+script = ExtResource( 6 )
+
+[node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
+position = Vector2( 0, -50 )
+
+[node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
+script = ExtResource( 6 )
+
+[node name="PowerupHolder" type="Node" parent="World"]
+
+[node name="Heart" parent="World/PowerupHolder" instance=ExtResource( 5 )]
+position = Vector2( 144, 96 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/GameOver = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverScreen" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1.58667
+margin_right = 1029.59
+margin_bottom = 600.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/GameOverScreen"]
+margin_left = 344.0
+margin_top = 136.0
+margin_right = 424.0
+margin_bottom = 150.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game Over!"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
