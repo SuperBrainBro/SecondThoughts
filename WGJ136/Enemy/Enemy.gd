@@ -30,3 +30,18 @@ func _physics_process(delta: float) -> void:
 		for body in bodies:
 			if body is Player:
 				body.health -= 1
+
+func on_Enemy_area_entered(area: Area2D):
+	if area is Fireball:
+		if area.fireMode == true:
+			print("fireMode was fire, so enemy was killed")
+			area.queue_free()
+			queue_free()
+		if area.fireMode == false:
+			print("fireMode was ice, so enemy was frozen")
+			area.queue_free()
+			frozen = true
+			$FreezeTimer.start(3)
+			
+func _on_FreezeTimer_timeout():
+	frozen = false
