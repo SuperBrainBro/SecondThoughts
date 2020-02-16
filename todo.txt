@@ -7,6 +7,7 @@ To Do:
   Add super-shot/penetration shot powerup
   Add Toad Boss
   Fix camera switching - very abrupt (perhaps interpolate camera)
+  Add new enemies with stats (health, damage, etc)
 
 Doing:
 
