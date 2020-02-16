@@ -180,7 +180,6 @@ position = Vector2( 0, -50 )
 script = ExtResource( 6 )
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player2/Camera2D"]
-visible = false
 scale = Vector2( 0.75, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player2/Camera2D/Vignette"]
