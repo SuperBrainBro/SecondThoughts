@@ -4,7 +4,7 @@ class_name Enemy
 onready var player1 = $"../../PlayerHolder/Player1"
 onready var player2 = $"../../PlayerHolder/Player2"
 
-export var follow_speed: float
+export var follow_speed: float = 30
 export var damage: float
 export var max_health: float
 export var type: String
@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		return
 	if target_player:
 		position += position.direction_to(target_player.position) * delta * follow_speed
+		$Sprite.look_at(target_player.position)
 		var bodies = get_overlapping_bodies()
 		for body in bodies:
 			if body is Player:
