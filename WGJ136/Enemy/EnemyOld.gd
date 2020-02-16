@@ -1,5 +1,5 @@
 extends Area2D
-class_name Enemy
+class_name EnemyOld
 
 onready var player1: Player = $"../../PlayerHolder/Player1"
 onready var player2: Player = $"../../PlayerHolder/Player2"
