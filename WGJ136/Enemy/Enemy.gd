@@ -1,8 +1,8 @@
 extends Area2D
 class_name Enemy
 
-onready var player1: Player = $"../../PlayerHolder/Player1"
-onready var player2: Player = $"../../PlayerHolder/Player2"
+onready var player1 = $"../../PlayerHolder/Player1"
+onready var player2 = $"../../PlayerHolder/Player2"
 
 export var follow_speed: float
 export var damage: float
@@ -12,7 +12,7 @@ export var frozen: bool
 
 onready var health: float = max_health
 
-var target_player: Player
+var target_player
 
 func _ready() -> void:
 	randomize()
