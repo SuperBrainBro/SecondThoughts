@@ -50,10 +50,6 @@ func on_Enemy_area_entered(area: Area2D):
 			area.queue_free()
 			frozen = true
 			$FreezeTimer.start(3)
-		
-func _on_Player_died():
-	queue_free()
-
 
 func _on_FreezeTimer_timeout():
 	frozen = false
