@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		is_active = false
 		emit_signal("died")
 		($"../../../ScoreTimer" as Timer).stop()
-		$"../../../AnimationPlayer".play("GameOver")
+		$"../../../CanvasLayer/Control/GameOverScreen".show()
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
 		fireball.direction = position.direction_to(get_global_mouse_position())
