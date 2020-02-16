@@ -1,0 +1,13 @@
+To Do:
+  Add Dungeon
+  Rework enemy spawning
+  Add Ranged Enemy
+  Add Chests with random powerups
+  Add rapidfire powerup
+  Add super-shot/penetration shot powerup
+  Add Toad Boss
+  Fix camera switching - very abrupt (perhaps interpolate camera)
+
+Doing:
+
+Done:
