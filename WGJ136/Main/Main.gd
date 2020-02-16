@@ -28,8 +28,8 @@ func _ready() -> void:
 	shader1.visible = player1.is_active
 	shader2.visible = player2.is_active
 	
-	player1.intendedFireMode = true
-	player2.intendedFireMode = false
+	player1.intendedFireMode = false
+	player2.intendedFireMode = true
 	
 	$SpawnTimer.connect("timeout", self, "_on_SpawnTimer_timeout")
 	$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
