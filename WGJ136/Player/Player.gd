@@ -10,7 +10,7 @@ export var speed: float = 100
 export var is_active: bool = true
 export var health: float = 100
 
-export var intendedFireMode: bool = true
+export var intendedFireMode: bool = false
 
 onready var wand: Sprite = $Wand
 onready var spr: Sprite = $Sprite
