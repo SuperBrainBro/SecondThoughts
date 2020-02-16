@@ -1,7 +1,7 @@
 # WGJ136
  A game my friends and I created for Weekly Game Jam 136.
  
- ##To Do:
+ ## To Do:
   Make Title Screen
   Make End Screen
   Add Dungeon
@@ -13,7 +13,7 @@
   Add Toad Boss
   Fix camera switching - very abrupt (perhaps interpolate camera)
 
-##Doing:
+## Doing:
   Add new enemies with stats (health, damage, etc)
 
-##Done:
+## Done:
