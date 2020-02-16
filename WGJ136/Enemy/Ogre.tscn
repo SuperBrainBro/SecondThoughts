@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
+
+[node name="Ogre" instance=ExtResource( 1 )]
+follow_speed = 30.0

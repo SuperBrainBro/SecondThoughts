@@ -12,7 +12,7 @@ export var health: float = 100
 
 export var intendedFireMode: bool = false
 
-onready var wand: Sprite = $Wand
+#onready var wand: Sprite = $Wand
 onready var spr: Sprite = $Sprite
 onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"

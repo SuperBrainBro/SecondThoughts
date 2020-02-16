@@ -4,10 +4,9 @@ class_name Enemy
 onready var player1 = $"../../PlayerHolder/Player1"
 onready var player2 = $"../../PlayerHolder/Player2"
 
-export var follow_speed: float = 30
-export var damage: float
+export var follow_speed: float
+export var damage: float = 1
 export var max_health: float
-export var type: String
 export var frozen: bool
 
 onready var health: float = max_health
@@ -30,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		var bodies = get_overlapping_bodies()
 		for body in bodies:
 			if body is Player:
-				body.health -= 1
+				body.health -= damage
 
 func on_Enemy_area_entered(area: Area2D):
 	if area is Fireball:
