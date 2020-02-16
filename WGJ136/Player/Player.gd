@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
+signal died()
+
 const FIREBALL_SCENE: PackedScene = preload("res://Fireball/Fireball.tscn")
 
 export var velocity: Vector2
@@ -16,6 +18,10 @@ func _process(_delta: float) -> void:
 	($ActiveArrow as Sprite).visible = is_active
 	$HealthBar.value = health
 	if health == 0:
+		health -= 1
+		is_active = false
+		emit_signal("died")
+		($"../../../ScoreTimer" as Timer).stop()
 		$"../../../AnimationPlayer".play("GameOver")
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
