@@ -13,7 +13,7 @@ var target_player: Player
 
 func _ready() -> void:
 	randomize()
-	target_player = player1 if rand_range(0,1) > 0.5 else player2
+	target_player = player1 if randf() > 0.5 else player2
 	connect("area_entered", self, "on_Enemy_area_entered")
 	player1.connect("died", self, "queue_free")
 	player2.connect("died", self, "queue_free")
