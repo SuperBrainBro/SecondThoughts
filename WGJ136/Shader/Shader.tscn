@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Shader/another maybe shade.png" type="Texture" id=1]
+
+[node name="Shader" type="Sprite"]
+rotation = 1.5708
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 1 )

@@ -171,6 +171,7 @@ position = Vector2( 0, -90 )
 scale = Vector2( 0.65, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player1/Camera2D/Vignette"]
+modulate = Color( 1, 1, 1, 0.607843 )
 texture = ExtResource( 8 )
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
@@ -185,6 +186,7 @@ position = Vector2( 0, 10 )
 scale = Vector2( 0.65, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player2/Camera2D/Vignette"]
+modulate = Color( 1, 1, 1, 0.607843 )
 texture = ExtResource( 8 )
 
 [node name="PowerupHolder" type="Node" parent="World"]
