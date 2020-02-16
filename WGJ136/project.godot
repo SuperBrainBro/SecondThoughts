@@ -54,13 +54,6 @@ config/name="Second Thoughts"
 config/description="Single Player Co-Op Game in A Dangerous Dungeon. Made For Weekly Game Jam 136!"
 run/main_scene="res://Main/Main.tscn"
 
-[display]
-
-window/size/width=1280
-window/size/height=720
-window/size/resizable=false
-window/size/borderless=true
-
 [input]
 
 move_up={
@@ -97,8 +90,3 @@ attack={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
-
-[rendering]
-
-quality/driver/driver_name="GLES2"
-environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
