@@ -10,6 +10,9 @@ extents = Vector2( 28, 28 )
 [node name="Enemy" type="Area2D"]
 script = ExtResource( 2 )
 
+[node name="Shader" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.950012, 0 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
@@ -18,7 +21,4 @@ shape = SubResource( 1 )
 
 [node name="FreezeTimer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Shader" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.950012, 0 )
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_FreezeTimer_timeout"]
