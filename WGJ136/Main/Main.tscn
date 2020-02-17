@@ -86,7 +86,7 @@ position = Vector2( 120, 312 )
 position = Vector2( -504, 312 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 8.0
 autostart = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
