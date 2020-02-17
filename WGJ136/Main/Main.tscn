@@ -236,6 +236,7 @@ __meta__ = {
 }
 
 [node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
 margin_left = 1.58667
 margin_right = 1281.59
 margin_bottom = 720.0
