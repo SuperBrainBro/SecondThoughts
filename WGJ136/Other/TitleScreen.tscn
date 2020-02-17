@@ -112,7 +112,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 7 )
 text = "Version 1.0
-By Vincent Jenei and Nooh Alavi"
+By Vincent Jenei and Nooh Alavi. Art By LimeMouth. SoundFX By Yahya"
 
 [node name="Vignette" type="TextureRect" parent="Control"]
 margin_right = 40.0
