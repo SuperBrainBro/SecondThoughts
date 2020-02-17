@@ -16,14 +16,14 @@ __meta__ = {
 [node name="Menu" type="VBoxContainer" parent="Control"]
 margin_left = 120.0
 margin_top = 80.0
-margin_right = 1348.0
-margin_bottom = 640.0
+margin_right = -120.0
+margin_bottom = 80.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo3" type="TextureRect" parent="Control/Menu"]
-margin_right = 1228.0
+margin_right = 1088.0
 margin_bottom = 168.0
 texture = ExtResource( 3 )
 stretch_mode = 4
@@ -33,13 +33,13 @@ __meta__ = {
 
 [node name="CenterRow" type="HBoxContainer" parent="Control/Menu"]
 margin_top = 172.0
-margin_right = 1228.0
-margin_bottom = 560.0
+margin_right = 1088.0
+margin_bottom = 268.0
 size_flags_vertical = 3
 
 [node name="Player1" type="TextureRect" parent="Control/Menu/CenterRow"]
 margin_right = 96.0
-margin_bottom = 388.0
+margin_bottom = 96.0
 rect_pivot_offset = Vector2( 48, 48 )
 texture = ExtResource( 2 )
 stretch_mode = 5
@@ -47,7 +47,7 @@ stretch_mode = 5
 [node name="Player2" type="TextureRect" parent="Control/Menu/CenterRow"]
 margin_left = 100.0
 margin_right = 196.0
-margin_bottom = 388.0
+margin_bottom = 96.0
 rect_pivot_offset = Vector2( 48, 48 )
 texture = ExtResource( 1 )
 stretch_mode = 5
