@@ -11,7 +11,8 @@
   * Fix camera switching - very abrupt (perhaps interpolate camera)
 
 ## Doing:
-  * Make Title Screen    * Add Dungeon
+  * Make Title Screen
+  * Add Dungeon
 
 ## Done:
   * Add new enemies with stats (health, damage, etc)
