@@ -6,7 +6,7 @@ signal died()
 const FIREBALL_SCENE: PackedScene = preload("res://Fireball/Fireball.tscn")
 
 export var velocity: Vector2
-export var speed: float = 100
+export var speed: float = 200
 export var is_active: bool = true
 export var health: float = 100
 
