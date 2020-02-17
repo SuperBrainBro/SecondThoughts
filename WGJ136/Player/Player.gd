@@ -6,9 +6,9 @@ signal died()
 const FIREBALL_SCENE: PackedScene = preload("res://Fireball/Fireball.tscn")
 
 export var velocity: Vector2
-export var speed: float = 200
+export var speed: float
 export var is_active: bool = true
-export var health: float = 100
+export var health: float = 200
 
 export var is_frostbite: bool
 
@@ -52,4 +52,4 @@ func _physics_process(_delta: float) -> void:
 	velocity.x += Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity = velocity.normalized() * speed
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity.normalized() * speed)

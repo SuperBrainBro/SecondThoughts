@@ -6,4 +6,6 @@
 scene_to_load = "res://Main/Main.tscn"
 
 [node name="Label" parent="." index="0"]
+custom_colors/font_color = Color( 0.921569, 0.921569, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.0980392, 0.0980392, 0.196078, 1 )
 text = "Play"
