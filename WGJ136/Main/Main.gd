@@ -37,7 +37,8 @@ func _ready() -> void:
 	$CanvasLayer/Control/GameOverScreen.hide()
 	$SpawnTimer.connect("timeout", self, "_on_SpawnTimer_timeout")
 	$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
-
+	$CanvasLayer/Control/GameOverScreen/PlayAgainButton.connect("pressed", self, "_on_PlayAgainButton_Pressed")
+	
 func _process(_delta: float) -> void:
 	$CanvasLayer/Control/ScoreLabel.text = "Score: " + str(score)
 	if Input.is_action_just_pressed("change_player"):
@@ -70,3 +71,6 @@ func _on_SpawnTimer_timeout():
 
 func _on_ScoreTimer_timeout():
 	score += 1
+	
+func _on_PlayAgainButton_Pressed() -> void:
+	get_tree().change_scene("res://Main/Main.tscn")
