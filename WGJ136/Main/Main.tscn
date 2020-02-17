@@ -235,8 +235,8 @@ __meta__ = {
 [node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
 visible = false
 margin_left = 1.58667
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 1281.59
+margin_bottom = 720.0
 color = Color( 1, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
