@@ -21,4 +21,8 @@ shape = SubResource( 1 )
 
 [node name="FreezeTimer" type="Timer" parent="."]
 wait_time = 6.0
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_FreezeTimer_timeout"]

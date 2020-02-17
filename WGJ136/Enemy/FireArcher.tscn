@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
+
+[node name="FireArcher" instance=ExtResource( 1 )]
+follow_speed = 5.0
+is_fire_archer = true
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color( 1, 0.329412, 0, 1 )

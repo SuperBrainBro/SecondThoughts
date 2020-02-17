@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Enemy/Enemy.gd"
 }, {
 "base": "Area2D",
+"class": "EnemyFireball",
+"language": "GDScript",
+"path": "res://Enemy/EnemyFireball.gd"
+}, {
+"base": "Area2D",
 "class": "EnemyOld",
 "language": "GDScript",
 "path": "res://Enemy/EnemyOld.gd"
@@ -41,6 +46,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Enemy": "",
+"EnemyFireball": "",
 "EnemyOld": "",
 "Fireball": "",
 "Heart": "",
