@@ -40,7 +40,7 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Control/Menu"]
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0.501961, 0, 0, 1 )
 margin_right = 1040.0
 margin_bottom = 260.0
 texture = ExtResource( 1 )
