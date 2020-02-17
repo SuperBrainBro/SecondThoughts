@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Second Thoughts Logo 3.png-4af94d4f329ca2ebb6949dff369c2745.stex"
+path="res://.import/health_meter_01.png-f780c7fc9e64ff179c761cf05a863b95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Other/Second Thoughts Logo 3.png"
-dest_files=[ "res://.import/Second Thoughts Logo 3.png-4af94d4f329ca2ebb6949dff369c2745.stex" ]
+source_file="res://Other/health_meter_01.png"
+dest_files=[ "res://.import/health_meter_01.png-f780c7fc9e64ff179c761cf05a863b95.stex" ]
 
 [params]
 

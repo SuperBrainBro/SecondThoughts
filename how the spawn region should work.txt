@@ -1,0 +1,19 @@
+when player enters the spawn region:
+	if there is no timer playing:
+		spawn monsters
+		start the timer
+	else return
+
+	if you are inside the spawn region:
+		check if timer is playing:
+			wait until end of timer
+		if timer is not playing then start the timer
+	
+	when player leaves the spawn region:
+		stop timer
+
+else dont spawn
+
+on timer spawn time done:
+	spawn monsters (random)
+	start timer again
