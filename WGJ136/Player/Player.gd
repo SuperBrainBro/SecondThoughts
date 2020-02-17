@@ -9,7 +9,7 @@ export var velocity: Vector2
 export var speed: float
 export var is_active: bool = true
 export var health: float = 200
-
+export var damage: float = 1
 export var is_frostbite: bool
 
 export var intendedFireMode: bool = false
@@ -42,6 +42,7 @@ func _process(_delta: float) -> void:
 		fireball.position = position
 		fireball.fireMode = intendedFireMode
 		fireball.can_penetrate = can_penetrate
+		fireball.damage = damage
 		$"../../FireballHolder".add_child(fireball)
 		cam1.shake(0.15,21,9)
 		cam2.shake(0.15,21,9)

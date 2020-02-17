@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Chest/Chest.gd"
 }, {
 "base": "Area2D",
+"class": "DamageUp",
+"language": "GDScript",
+"path": "res://PenetrationPowerup/DamageUp.gd"
+}, {
+"base": "Area2D",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemy/Enemy.gd"
@@ -56,6 +61,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Chest": "",
+"DamageUp": "",
 "Enemy": "",
 "EnemyFireball": "",
 "EnemyOld": "",

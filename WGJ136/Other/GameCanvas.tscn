@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enemy/FixedSprites/Firestalker_facesprite_04.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/FixedSprites/frost_facesprite_01.png" type="Texture" id=2]
 [ext_resource path="res://Other/font48.tres" type="DynamicFont" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-
-
+[ext_resource path="res://Other/health_meter_02.png" type="Texture" id=5]
+[ext_resource path="res://Other/health_meter_01.png" type="Texture" id=6]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -31,8 +30,11 @@ margin_left = 494.413
 margin_top = 152.0
 margin_right = 574.413
 margin_bottom = 166.0
-rect_scale = Vector2( 4, 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
 text = "Game Over!"
 uppercase = true
 __meta__ = {
@@ -42,10 +44,16 @@ __meta__ = {
 [node name="PlayAgainButton" type="Button" parent="Control/GameOverScreen"]
 margin_left = 502.413
 margin_top = 376.0
-margin_right = 579.413
-margin_bottom = 396.0
-rect_scale = Vector2( 4, 4 )
+margin_right = 796.413
+margin_bottom = 442.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 text = "Play Again"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ScoreLabel" type="Label" parent="Control"]
 margin_right = 51.0
@@ -59,14 +67,15 @@ __meta__ = {
 }
 
 [node name="HealthBarIce" type="TextureProgress" parent="Control"]
-margin_left = 1016.0
-margin_top = 672.0
-margin_right = 1080.0
-margin_bottom = 736.0
-rect_scale = Vector2( 4, 0.25 )
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 4 )
+anchor_right = 1.0
+margin_left = 896.0
+margin_top = 616.0
+margin_right = 1240.0
+margin_bottom = 720.0
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 1, 0, 0, 1 )
 __meta__ = {
@@ -74,22 +83,25 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBarIce"]
-margin_left = -21.7751
-margin_top = -241.012
-margin_right = 74.2249
-margin_bottom = -145.012
-rect_scale = Vector2( 0.25, 4 )
+margin_left = -40.0
+margin_top = -20.0
+margin_right = 56.0
+margin_bottom = 76.0
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HealthBarFire" type="TextureProgress" parent="Control"]
-margin_left = 96.0
-margin_top = 672.0
-margin_right = 160.0
-margin_bottom = 736.0
-rect_scale = Vector2( 4, 0.25 )
-value = 100.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 4 )
+anchor_right = 1.0
+margin_left = 56.0
+margin_top = 624.0
+margin_right = 400.0
+margin_bottom = 720.0
+max_value = 10.0
+value = 5.0
+texture_under = ExtResource( 5 )
+texture_over = ExtResource( 6 )
 tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 1, 0, 0, 1 )
 __meta__ = {
@@ -97,11 +109,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control/HealthBarFire"]
-margin_left = -20.0
-margin_top = -256.0
-margin_right = 76.0
-margin_bottom = -160.0
-rect_scale = Vector2( 0.225, 4 )
+margin_left = -40.0
+margin_top = -20.0
+margin_right = 56.0
+margin_bottom = 76.0
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

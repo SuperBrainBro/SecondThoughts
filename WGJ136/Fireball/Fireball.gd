@@ -3,7 +3,7 @@ class_name Fireball
 
 export var direction: Vector2
 export var speed: float = 650
-
+export var damage: float = 1
 export var fireMode: bool = true
 export var can_penetrate: bool
 
