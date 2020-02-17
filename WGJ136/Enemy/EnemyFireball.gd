@@ -2,7 +2,7 @@ extends Area2D
 class_name EnemyFireball
 
 export var direction: Vector2
-export var speed: float = 300
+export var speed: float = 200
 
 func _ready() -> void:
 	connect("body_entered", self, "on_EnemyFireball_body_entered")

@@ -186,14 +186,15 @@ texture = ExtResource( 8 )
 position = Vector2( 0, -50 )
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
+current = true
 script = ExtResource( 6 )
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player2/Camera2D"]
-visible = false
 scale = Vector2( 0.75, 0.65 )
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player2/Camera2D/Vignette"]
 modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( 140.351, 6.81864 )
 texture = ExtResource( 8 )
 
 [node name="PowerupHolder" type="Node" parent="World"]
