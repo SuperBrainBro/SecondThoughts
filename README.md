@@ -3,7 +3,6 @@
  
  ## To Do:
   * Make End Screen
-  * Add Dungeon
   * Rework enemy spawning
   * Add Chests with random powerups
   * Add rapidfire powerup
@@ -14,6 +13,7 @@
 ## Doing:
   * Make Title Screen
   * Add Ranged Enemy
+    * Add Dungeon
 
 ## Done:
   * Add new enemies with stats (health, damage, etc)
