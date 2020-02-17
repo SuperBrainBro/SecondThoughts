@@ -183,7 +183,7 @@ __meta__ = {
 }
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player1/Camera2D"]
-scale = Vector2( 0.72, 0.61 )
+scale = Vector2( 0.73, 0.62 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -203,7 +203,7 @@ __meta__ = {
 }
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player2/Camera2D"]
-scale = Vector2( 0.72, 0.61 )
+scale = Vector2( 0.73, 0.62 )
 __meta__ = {
 "_edit_lock_": true
 }
