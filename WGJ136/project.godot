@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://Chest/Chest.gd"
+}, {
+"base": "Area2D",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://Enemy/Enemy.gd"
@@ -45,6 +50,7 @@ _global_script_classes=[ {
 "path": "res://Player/Player.gd"
 } ]
 _global_script_class_icons={
+"Chest": "",
 "Enemy": "",
 "EnemyFireball": "",
 "EnemyOld": "",
