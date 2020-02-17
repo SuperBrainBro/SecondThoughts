@@ -4,6 +4,7 @@ class_name Main
 const ENEMY_SCENE: PackedScene = preload("res://Enemy/Enemy.tscn")
 const OGRE_SCENE = preload("res://Enemy/Ogre.tscn")
 const SKELETON_SCENE = preload("res://Enemy/Skeleton.tscn")
+const FIRE_ARCHER_SCENE = preload("res://Enemy/FireArcher.tscn")
 
 onready var player1: Player = $World/PlayerHolder/Player1
 onready var player2: Player = $World/PlayerHolder/Player2
@@ -57,10 +58,13 @@ func _process(_delta: float) -> void:
 func _on_SpawnTimer_timeout():
 	for spawn_location in $"SpawnLocations".get_children():
 		var enemy: Enemy
-		if randf() > 0.5:
+		var rand_num = round(rand_range(0, 3))
+		if rand_num == 0:
 			enemy = OGRE_SCENE.instance()
-		else:
+		elif rand_num == 1:
 			enemy = SKELETON_SCENE.instance()
+		else:
+			enemy = FIRE_ARCHER_SCENE.instance()
 		enemy.position = spawn_location.position
 		$"/root/Main/World/EnemyHolder".add_child(enemy)
 

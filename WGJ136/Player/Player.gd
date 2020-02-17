@@ -11,8 +11,8 @@ export var is_active: bool = true
 export var health: float = 100
 
 export var intendedFireMode: bool = false
+export var is_dead: bool = false
 
-#onready var wand: Sprite = $Wand
 onready var spr: Sprite = $Sprite
 onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
@@ -20,12 +20,14 @@ onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
 func _process(_delta: float) -> void:	
 	($ActiveArrow as Sprite).visible = is_active
 	$HealthBar.value = health
-	if health == 0:
+	if health <= 0:
 		health -= 1
-		is_active = false
+		is_dead = false
 		emit_signal("died")
 		($"../../../ScoreTimer" as Timer).stop()
 		$"../../../CanvasLayer/Control/GameOverScreen".show()
+	if is_dead:
+		is_active = false
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
 		fireball.direction = position.direction_to(get_global_mouse_position())
