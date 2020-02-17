@@ -10,16 +10,23 @@ export var speed: float = 200
 export var is_active: bool = true
 export var health: float = 100
 
+export var is_frostbite: bool
+
 export var intendedFireMode: bool = false
 export var is_dead: bool = false
 
 onready var spr: Sprite = $Sprite
 onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
+var health_bar: TextureProgress
 
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
+	if is_frostbite:
+		health_bar = $"/root/Main/CanvasLayer/Control/HealthBarIce"
+	else:
+		health_bar = $"/root/Main/CanvasLayer/Control/HealthBarFire"
 	($ActiveArrow as Sprite).visible = is_active
-	$HealthBar.value = health
+	health_bar.value = health
 	if health <= 0:
 		health -= 1
 		is_dead = false
