@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilemap_final.png-1c6d326a6c33fbd3cbe885a16271e6d6.stex"
+path="res://.import/tilemap_final.png-f36959a1c626c437721d14da28f32d0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/FixedSprites/tilemap_final.png"
-dest_files=[ "res://.import/tilemap_final.png-1c6d326a6c33fbd3cbe885a16271e6d6.stex" ]
+source_file="res://Dungeon/tilemap_final.png"
+dest_files=[ "res://.import/tilemap_final.png-f36959a1c626c437721d14da28f32d0c.stex" ]
 
 [params]
 

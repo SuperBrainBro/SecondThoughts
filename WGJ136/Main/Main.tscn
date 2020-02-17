@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemy/Ogre.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Heart/Heart/Heart.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Main/Camera2D.gd" type="Script" id=6]
 [ext_resource path="res://Main/Tileset.png" type="Texture" id=7]
 [ext_resource path="res://Shader/black-vignette-png-2.png" type="Texture" id=8]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemy/Skeleton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tileset.png 0"
@@ -61,7 +63,11 @@ script = ExtResource( 2 )
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="Dungeon" parent="World" instance=ExtResource( 11 )]
+position = Vector2( -577.721, -446.161 )
+
 [node name="Ground" type="Node2D" parent="World"]
+visible = false
 scale = Vector2( 4, 4 )
 
 [node name="TileMap" type="TileMap" parent="World/Ground"]
@@ -139,23 +145,23 @@ tile_data = PoolIntArray( -851984, 2, 0, -851982, 0, 0, -851980, 2, 0, -851978, 
 
 [node name="EnemyHolder" type="Node" parent="World"]
 
-[node name="Enemy" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( 287.771, -45.2138 )
+[node name="Ogre" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( -319.453, -289.234 )
 
-[node name="Enemy1" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( -215.724, 107.329 )
+[node name="Ogre2" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( 252.54, -366.939 )
 
-[node name="Enemy2" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( -313.807, -286.852 )
+[node name="Ogre3" parent="World/EnemyHolder" instance=ExtResource( 4 )]
+position = Vector2( -297.868, 125.191 )
 
-[node name="Enemy3" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( 285.793, 279.437 )
+[node name="Skeleton" parent="World/EnemyHolder" instance=ExtResource( 10 )]
+position = Vector2( -459.753, -82.0217 )
 
-[node name="Enemy4" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( 134.043, -281.3 )
+[node name="Skeleton2" parent="World/EnemyHolder" instance=ExtResource( 10 )]
+position = Vector2( 300.027, 295.71 )
 
-[node name="Enemy5" parent="World/EnemyHolder" instance=ExtResource( 4 )]
-position = Vector2( -84.3302, 292.391 )
+[node name="Skeleton3" parent="World/EnemyHolder" instance=ExtResource( 10 )]
+position = Vector2( -84.1801, 336.721 )
 
 [node name="PlayerHolder" type="Node" parent="World"]
 
@@ -213,7 +219,7 @@ __meta__ = {
 [node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
 visible = false
 margin_left = 1.58667
-margin_right = 1029.59
+margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 1, 0, 0, 1 )
 __meta__ = {
