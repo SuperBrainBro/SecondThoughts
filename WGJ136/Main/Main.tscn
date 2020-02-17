@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Shader/black-vignette-png-2.png" type="Texture" id=8]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemy/Skeleton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tileset.png 0"
@@ -62,7 +63,11 @@ script = ExtResource( 2 )
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="Dungeon" parent="World" instance=ExtResource( 11 )]
+position = Vector2( -577.721, -446.161 )
+
 [node name="Ground" type="Node2D" parent="World"]
+visible = false
 scale = Vector2( 4, 4 )
 
 [node name="TileMap" type="TileMap" parent="World/Ground"]
