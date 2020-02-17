@@ -63,7 +63,7 @@ func _on_SpawnTimer_timeout():
 	if not instructions:
 		for spawn_location in $"SpawnLocations".get_children():
 			var enemy: Enemy
-			var rand_num = round(rand_range(0, 5))
+			var rand_num = round(rand_range(0, 4))
 			if rand_num == 0:
 				enemy = FIRE_ARCHER_SCENE.instance()
 			elif rand_num == 1 or rand_num == 2:

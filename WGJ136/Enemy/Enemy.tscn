@@ -11,6 +11,7 @@ extents = Vector2( 28, 28 )
 script = ExtResource( 2 )
 
 [node name="Shader" parent="." instance=ExtResource( 3 )]
+position = Vector2( -7.5, 2 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="Sprite" type="Sprite" parent="."]
