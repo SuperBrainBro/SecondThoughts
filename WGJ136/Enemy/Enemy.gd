@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 class_name Enemy
 
 const FIREBALL_SCENE: PackedScene = preload("res://Enemy/EnemyFireball.tscn")
@@ -16,10 +16,11 @@ export var is_fire_archer: bool
 
 var target_player
 
+export var linear_velocity: Vector2
+
 func _ready() -> void:
 	randomize()
 	target_player = player1 if randf() > 0.5 else player2
-	connect("area_entered", self, "on_Enemy_area_entered")
 	$ShootTimer.connect("timeout", self, "shoot")
 	player1.connect("died", self, "queue_free")
 	player2.connect("died", self, "queue_free")
@@ -31,11 +32,13 @@ func _physics_process(delta: float) -> void:
 		$Sprite.look_at(target_player.position)
 		if is_fire_archer:
 			return
-		position += position.direction_to(target_player.position) * delta * follow_speed
-		var bodies = get_overlapping_bodies()
-		for body in bodies:
-			if body is Player:
-				body.health -= damage
+		linear_velocity += position.direction_to(target_player.position)
+		linear_velocity = linear_velocity.normalized() * follow_speed
+		move_and_slide(linear_velocity)
+		if ($RayCast2D as RayCast2D).is_colliding():
+			var collider = $RayCast2D.get_collider()
+			if collider is Player:
+				collider.health -= damage
 
 func _process(delta: float) -> void:
 	if health <= 0:
@@ -65,7 +68,7 @@ func _on_FreezeTimer_timeout():
 func shoot():
 	if not is_fire_archer:
 		return
-	var fireball: EnemyFireball = FIREBALL_SCENE.instance()
+	var fireball = FIREBALL_SCENE.instance()
 	fireball.position = position
 	fireball.direction = position.direction_to(target_player.position)
 	$"/root/Main/World/FireballHolder".add_child(fireball)
