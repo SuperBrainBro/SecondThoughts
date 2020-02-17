@@ -4,7 +4,6 @@
  ## To Do:
   * Make End Screen
   * Rework enemy spawning
-  * Add Chests with random powerups
   * Add rapidfire powerup
   * Add super-shot/penetration shot powerup
   * Add Toad Boss
@@ -18,3 +17,4 @@
 ## Done:
   * Add new enemies with stats (health, damage, etc)
   * Add Ranged Enemy
+  * Add Chests with random powerups
