@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Other/Logo6.png" type="Texture" id=1]
 [ext_resource path="res://Other/Buttons/NewGameButton.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Other/black-vignette-png-2_1280x720.png" type="Texture" id=8]
 [ext_resource path="res://Other/FadeIn.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Other/title_screen.gd" type="Script" id=10]
+[ext_resource path="res://Other/make_not_clickable.gd" type="Script" id=11]
 
 [node name="TitleScreen" type="Node"]
 
@@ -117,6 +118,7 @@ By Vincent Jenei and Nooh Alavi"
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 8 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -124,3 +126,4 @@ __meta__ = {
 
 [node name="FadeIn" parent="Control" instance=ExtResource( 9 )]
 visible = false
+[connection signal="fade_finished" from="Control/FadeIn" to="Control" method="_on_FadeIn_fade_finished"]

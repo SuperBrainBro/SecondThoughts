@@ -64,7 +64,7 @@ _global_script_class_icons={
 
 config/name="Second Thoughts"
 config/description="Single Player Co-Op Game in A Dangerous Dungeon. Made For Weekly Game Jam 136!"
-run/main_scene="res://Main/Main.tscn"
+run/main_scene="res://Other/TitleScreen.tscn"
 
 [display]
 
