@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3.png-d97fcaa21fdb20c69e470ab853336b1d.stex"
+path="res://.import/pink-vignette-png-6-original.png-92a7c0a789622eeee211ff78612d5520.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Other/Instructions/3.png"
-dest_files=[ "res://.import/3.png-d97fcaa21fdb20c69e470ab853336b1d.stex" ]
+source_file="res://Other/pink-vignette-png-6/pink-vignette-png-6-original.png"
+dest_files=[ "res://.import/pink-vignette-png-6-original.png-92a7c0a789622eeee211ff78612d5520.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

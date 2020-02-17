@@ -1,19 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Heart/Heart/Heart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Other/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Main/Camera2D.gd" type="Script" id=6]
+[ext_resource path="res://Other/GameCanvas.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shader/black-vignette-png-2.png" type="Texture" id=8]
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
-[ext_resource path="res://icon.png" type="Texture" id=13]
-[ext_resource path="res://Enemy/FixedSprites/Firestalker_facesprite_04.png" type="Texture" id=14]
-[ext_resource path="res://Enemy/FixedSprites/frost_facesprite_01.png" type="Texture" id=15]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Other/font48.tres" type="DynamicFont" id=17]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/GameOverScreen:modulate")
 tracks/0/interp = 1
@@ -44,18 +41,7 @@ position = Vector2( -577.721, -446.161 )
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
 position = Vector2( 0, 50 )
 
-[node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player1"]
-script = ExtResource( 6 )
-
-[node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player1/Camera2D"]
-scale = Vector2( 0.72, 0.61 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player1/Camera2D/Vignette"]
-modulate = Color( 1, 1, 1, 0.784314 )
-texture = ExtResource( 8 )
+[node name="Camera2D" parent="World/PlayerHolder/Player1" instance=ExtResource( 4 )]
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
 position = Vector2( 0, -50 )
@@ -75,116 +61,15 @@ texture = ExtResource( 8 )
 
 [node name="PowerupHolder" type="Node" parent="World"]
 
-[node name="Heart" parent="World/PowerupHolder" instance=ExtResource( 5 )]
-position = Vector2( 144, 96 )
-
 [node name="Objects" type="Node" parent="World"]
 
 [node name="Chest" parent="World/Objects" instance=ExtResource( 16 )]
-position = Vector2( -320, -160 )
+position = Vector2( -2304, 224 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/GameOver = SubResource( 2 )
+anims/GameOver = SubResource( 1 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
-visible = false
-margin_left = 1.58667
-margin_right = 1281.59
-margin_bottom = 720.0
-color = Color( 1, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/GameOverScreen"]
-margin_left = 494.413
-margin_top = 152.0
-margin_right = 574.413
-margin_bottom = 166.0
-rect_scale = Vector2( 4, 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Game Over!"
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PlayAgainButton" type="Button" parent="CanvasLayer/Control/GameOverScreen"]
-margin_left = 502.413
-margin_top = 376.0
-margin_right = 579.413
-margin_bottom = 396.0
-rect_scale = Vector2( 4, 4 )
-text = "Play Again"
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control"]
-margin_right = 51.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 17 )
-custom_colors/font_color = Color( 0.921569, 0.921569, 1, 1 )
-custom_colors/font_color_shadow = Color( 0.0980392, 0.0980392, 0.196078, 1 )
-text = "Score: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthBarIce" type="TextureProgress" parent="CanvasLayer/Control"]
-margin_left = 1016.0
-margin_top = 672.0
-margin_right = 1080.0
-margin_bottom = 736.0
-rect_scale = Vector2( 4, 0.25 )
-value = 100.0
-texture_under = ExtResource( 13 )
-texture_progress = ExtResource( 13 )
-tint_under = Color( 0, 0, 0, 1 )
-tint_progress = Color( 1, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HealthBarIce"]
-margin_left = -21.7751
-margin_top = -241.012
-margin_right = 74.2249
-margin_bottom = -145.012
-rect_scale = Vector2( 0.25, 4 )
-texture = ExtResource( 15 )
-
-[node name="HealthBarFire" type="TextureProgress" parent="CanvasLayer/Control"]
-margin_left = 96.0
-margin_top = 672.0
-margin_right = 160.0
-margin_bottom = 736.0
-rect_scale = Vector2( 4, 0.25 )
-value = 100.0
-texture_under = ExtResource( 13 )
-texture_progress = ExtResource( 13 )
-tint_under = Color( 0, 0, 0, 1 )
-tint_progress = Color( 1, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/HealthBarFire"]
-margin_left = -20.0
-margin_top = -256.0
-margin_right = 76.0
-margin_bottom = -160.0
-rect_scale = Vector2( 0.225, 4 )
-texture = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
 [node name="SpawnLocations" type="CanvasLayer" parent="."]
 
