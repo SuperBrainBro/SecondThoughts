@@ -171,6 +171,7 @@ position = Vector2( 239.165, -73.0082 )
 
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
 position = Vector2( 0, 50 )
+speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player1"]
 script = ExtResource( 6 )
@@ -190,6 +191,7 @@ texture = ExtResource( 8 )
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
 position = Vector2( 0, -50 )
+speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
 script = ExtResource( 6 )
