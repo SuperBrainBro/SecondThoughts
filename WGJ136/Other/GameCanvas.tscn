@@ -5,6 +5,8 @@
 [ext_resource path="res://Other/font48.tres" type="DynamicFont" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 
+
+
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
