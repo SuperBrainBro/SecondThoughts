@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide(linear_velocity)
 		if ($RayCast2D as RayCast2D).is_colliding():
 			var collider = $RayCast2D.get_collider()
-			if collider is Player:
+			if collider.is_in_group("Players"):
 				collider.health -= damage
 
 func _process(delta: float) -> void:
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func on_Enemy_area_entered(area: Area2D):
-	if area is Fireball:
+	if area.is_in_group("Fireballs"):
 		if area.fireMode == true:
 			print("fireMode was fire, so enemy was killed")
 			if not area.can_penetrate:

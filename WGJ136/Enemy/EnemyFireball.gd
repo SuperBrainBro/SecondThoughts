@@ -11,5 +11,6 @@ func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
 
 func on_EnemyFireball_body_entered(body: PhysicsBody2D):
-	if body is Player:
-		body.health -= 20
+	if body:
+		if body.is_in_group("Players"):
+			body.health -= 20
