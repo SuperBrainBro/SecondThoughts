@@ -69,13 +69,11 @@ whatPowerup = "damage"
 [node name="PlayerHolder" type="Node" parent="World"]
 
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 0, 50 )
 
 [node name="Camera2D" parent="World/PlayerHolder/Player1" instance=ExtResource( 4 )]
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
-visible = false
 position = Vector2( 0, -50 )
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
@@ -99,7 +97,6 @@ anims/GameOver = SubResource( 1 )
 [node name="SpawnLocations" type="CanvasLayer" parent="."]
 
 [node name="Spawn Region" type="Area2D" parent="SpawnLocations"]
-visible = false
 position = Vector2( -504, -248 )
 
 [node name="Position2D" type="Position2D" parent="SpawnLocations/Spawn Region"]
