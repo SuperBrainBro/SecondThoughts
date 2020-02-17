@@ -5,6 +5,7 @@
 
 [node name="Skeleton" instance=ExtResource( 2 )]
 follow_speed = 60.0
+health = 3.0
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )
