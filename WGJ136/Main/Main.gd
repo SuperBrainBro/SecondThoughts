@@ -58,13 +58,13 @@ func _process(_delta: float) -> void:
 func _on_SpawnTimer_timeout():
 	for spawn_location in $"SpawnLocations".get_children():
 		var enemy: Enemy
-		var rand_num = round(rand_range(0, 3))
+		var rand_num = round(rand_range(0, 5))
 		if rand_num == 0:
-			enemy = OGRE_SCENE.instance()
-		elif rand_num == 1:
+			enemy = FIRE_ARCHER_SCENE.instance()
+		elif rand_num == 1 or rand_num == 2:
 			enemy = SKELETON_SCENE.instance()
 		else:
-			enemy = FIRE_ARCHER_SCENE.instance()
+			enemy = OGRE_SCENE.instance()
 		enemy.position = spawn_location.position
 		$"/root/Main/World/EnemyHolder".add_child(enemy)
 
