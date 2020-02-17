@@ -14,11 +14,15 @@ export var is_frostbite: bool
 
 export var intendedFireMode: bool = false
 export var is_dead: bool = false
+export var can_penetrate: bool
 
 onready var spr: Sprite = $Sprite
 onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
 var health_bar: TextureProgress
+
+func _ready() -> void:
+	$PenetrateTimer.connect("timeout", self, "_on_PenetrateTimer_timeout")
 
 func _process(_delta: float) -> void:
 	if is_frostbite:
@@ -40,6 +44,7 @@ func _process(_delta: float) -> void:
 		fireball.direction = position.direction_to(get_global_mouse_position())
 		fireball.position = position
 		fireball.fireMode = intendedFireMode
+		fireball.can_penetrate = can_penetrate
 		$"../../FireballHolder".add_child(fireball)
 		cam1.shake(0.15,21,9)
 		cam2.shake(0.15,21,9)
@@ -53,3 +58,6 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity.normalized() * speed)
+
+func _on_PenetrateTimer_timeout() -> void:
+	can_penetrate = false

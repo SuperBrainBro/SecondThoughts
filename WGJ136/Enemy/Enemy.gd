@@ -45,7 +45,8 @@ func on_Enemy_area_entered(area: Area2D):
 	if area is Fireball:
 		if area.fireMode == true:
 			print("fireMode was fire, so enemy was killed")
-			area.queue_free()
+			if not area.can_penetrate:
+				area.queue_free()
 			if not is_fire_archer:
 				health -= 2
 		if area.fireMode == false:
@@ -53,6 +54,8 @@ func on_Enemy_area_entered(area: Area2D):
 			health -= 1
 			if is_fire_archer:
 				queue_free()
+			if not area.can_penetrate:
+				area.queue_free()
 			frozen = true
 			$FreezeTimer.start(3)
 			

@@ -75,6 +75,9 @@ position = Vector2( 2424, -1928 )
 [node name="Chest4" parent="World/Objects" instance=ExtResource( 16 )]
 position = Vector2( 1024, -240 )
 
+[node name="Chest2" parent="World/Objects" instance=ExtResource( 16 )]
+position = Vector2( -56, -248 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GameOver = SubResource( 1 )
 
@@ -188,7 +191,7 @@ position = Vector2( 120, 312 )
 position = Vector2( -504, 312 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 8.0
 autostart = true
 
 [node name="ScoreTimer" type="Timer" parent="."]
