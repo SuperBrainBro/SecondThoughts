@@ -8,13 +8,11 @@ onready var player2 = $"../../PlayerHolder/Player2"
 
 export var follow_speed: float
 export var damage: float = 1
-export var max_health: float
+export var health: float
 export var frozen: bool
 
 export var is_ghost: bool
 export var is_fire_archer: bool
-
-onready var health: float = max_health
 
 var target_player
 
@@ -39,16 +37,20 @@ func _physics_process(delta: float) -> void:
 			if body is Player:
 				body.health -= damage
 
+func _process(delta: float) -> void:
+	if health <= 0:
+		queue_free()
+
 func on_Enemy_area_entered(area: Area2D):
 	if area is Fireball:
 		if area.fireMode == true:
 			print("fireMode was fire, so enemy was killed")
 			area.queue_free()
 			if not is_fire_archer:
-				queue_free()
+				health -= 2
 		if area.fireMode == false:
 			print("fireMode was ice, so enemy was frozen")
-			area.queue_free()
+			health -= 1
 			if is_fire_archer:
 				queue_free()
 			frozen = true

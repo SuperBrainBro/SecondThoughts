@@ -4,3 +4,4 @@
 
 [node name="Ogre" instance=ExtResource( 1 )]
 follow_speed = 30.0
+health = 5.0

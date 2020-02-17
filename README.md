@@ -12,8 +12,8 @@
 
 ## Doing:
   * Make Title Screen
-  * Add Ranged Enemy
-    * Add Dungeon
+  * Add Dungeon
 
 ## Done:
   * Add new enemies with stats (health, damage, etc)
+  * Add Ranged Enemy
