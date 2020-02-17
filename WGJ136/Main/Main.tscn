@@ -64,7 +64,16 @@ texture = ExtResource( 8 )
 [node name="Objects" type="Node" parent="World"]
 
 [node name="Chest" parent="World/Objects" instance=ExtResource( 16 )]
-position = Vector2( -2304, 224 )
+position = Vector2( -2312, 224 )
+
+[node name="Chest2" parent="World/Objects" instance=ExtResource( 16 )]
+position = Vector2( 568, -2848 )
+
+[node name="Chest3" parent="World/Objects" instance=ExtResource( 16 )]
+position = Vector2( 2424, -1928 )
+
+[node name="Chest4" parent="World/Objects" instance=ExtResource( 16 )]
+position = Vector2( 1024, -240 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GameOver = SubResource( 1 )
@@ -75,6 +84,99 @@ anims/GameOver = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="SpawnLocations"]
 position = Vector2( -504, -248 )
+
+[node name="Position2D5" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1104, -96 )
+
+[node name="Position2D6" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1816, -192 )
+
+[node name="Position2D7" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1448, -200 )
+
+[node name="Position2D8" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1816, -472 )
+
+[node name="Position2D9" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1800, 280 )
+
+[node name="Position2D10" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1800, 536 )
+
+[node name="Position2D11" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1496, 296 )
+
+[node name="Position2D12" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -1496, 552 )
+
+[node name="Position2D13" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 168, 816 )
+
+[node name="Position2D14" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 1120, 824 )
+
+[node name="Position2D15" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 1104, 1432 )
+
+[node name="Position2D16" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 1104, 1056 )
+
+[node name="Position2D17" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 656, 1392 )
+
+[node name="Position2D18" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 208, 1360 )
+
+[node name="Position2D19" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 184, 1056 )
+
+[node name="Position2D20" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 512, 2496 )
+
+[node name="Position2D21" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 736, 2504 )
+
+[node name="Position2D22" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 912, -120 )
+
+[node name="Position2D23" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 1120, -120 )
+
+[node name="Position2D24" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 56, -592 )
+
+[node name="Position2D25" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 24, -928 )
+
+[node name="Position2D26" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -432, -1024 )
+
+[node name="Position2D27" type="Position2D" parent="SpawnLocations"]
+position = Vector2( -424, -680 )
+
+[node name="Position2D28" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 464, -1496 )
+
+[node name="Position2D29" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 456, -1240 )
+
+[node name="Position2D30" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 656, -1424 )
+
+[node name="Position2D31" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 1056, -1856 )
+
+[node name="Position2D32" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 496, -2144 )
+
+[node name="Position2D33" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 776, -1920 )
+
+[node name="Position2D34" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 800, -2240 )
+
+[node name="Position2D35" type="Position2D" parent="SpawnLocations"]
+position = Vector2( 616, -2728 )
 
 [node name="Position2D2" type="Position2D" parent="SpawnLocations"]
 position = Vector2( 120, -248 )
