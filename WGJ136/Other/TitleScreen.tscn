@@ -22,18 +22,22 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Control/Menu"]
-margin_left = 500.0
-margin_right = 596.0
-margin_bottom = 96.0
+margin_left = 620.0
+margin_top = 50.0
+margin_right = 716.0
+margin_bottom = 146.0
 rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 48, 48 )
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Logo2" type="TextureRect" parent="Control/Menu"]
-margin_left = 500.0
-margin_top = 200.0
-margin_right = 596.0
-margin_bottom = 296.0
+margin_left = 420.0
+margin_top = 50.0
+margin_right = 516.0
+margin_bottom = 146.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 48, 48 )
 texture = ExtResource( 1 )
 stretch_mode = 5
 __meta__ = {
