@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fire.png-e827b61e02d420a627bd3ae1d7c44cd4.stex"
+path="res://.import/fire_guy_02_ani_02-Sheet.png-fa1cb1d48c907a3b57bc3799d25b4e0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/fire.png"
-dest_files=[ "res://.import/fire.png-e827b61e02d420a627bd3ae1d7c44cd4.stex" ]
+source_file="res://Objects/fire_guy_02_ani_02-Sheet.png"
+dest_files=[ "res://.import/fire_guy_02_ani_02-Sheet.png-fa1cb1d48c907a3b57bc3799d25b4e0c.stex" ]
 
 [params]
 
