@@ -21,9 +21,6 @@ onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
 var health_bar: TextureProgress
 
-func _ready() -> void:
-	$PenetrateTimer.connect("timeout", self, "_on_PenetrateTimer_timeout")
-
 func _process(_delta: float) -> void:
 	if is_frostbite:
 		health_bar = $"/root/Main/CanvasLayer/Control/HealthBarIce"
@@ -58,6 +55,3 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity.normalized() * speed)
-
-func _on_PenetrateTimer_timeout() -> void:
-	can_penetrate = false

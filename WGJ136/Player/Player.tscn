@@ -25,6 +25,3 @@ shape = SubResource( 1 )
 position = Vector2( 0, -64 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="PenetrateTimer" type="Timer" parent="."]
-wait_time = 20.0
