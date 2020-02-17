@@ -236,7 +236,6 @@ __meta__ = {
 }
 
 [node name="GameOverScreen" type="ColorRect" parent="CanvasLayer/Control"]
-visible = false
 margin_left = 1.58667
 margin_right = 1281.59
 margin_bottom = 720.0
@@ -246,10 +245,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/GameOverScreen"]
-margin_left = 344.0
-margin_top = 136.0
-margin_right = 424.0
-margin_bottom = 150.0
+margin_left = 494.413
+margin_top = 152.0
+margin_right = 574.413
+margin_bottom = 166.0
 rect_scale = Vector2( 4, 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over!"
