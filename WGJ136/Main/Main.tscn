@@ -175,12 +175,18 @@ speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player1"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player1/Camera2D"]
-scale = Vector2( 0.75, 0.65 )
+scale = Vector2( 0.58, 0.51 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player1/Camera2D/Vignette"]
-modulate = Color( 1, 1, 1, 0.607843 )
+modulate = Color( 1, 1, 1, 0.784314 )
 texture = ExtResource( 8 )
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
@@ -188,15 +194,19 @@ position = Vector2( 0, -50 )
 speed = 100.0
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
-current = true
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Vignette" type="Node2D" parent="World/PlayerHolder/Player2/Camera2D"]
-scale = Vector2( 0.75, 0.65 )
+scale = Vector2( 0.58, 0.51 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="World/PlayerHolder/Player2/Camera2D/Vignette"]
-modulate = Color( 1, 1, 1, 0.607843 )
-position = Vector2( 140.351, 6.81864 )
+modulate = Color( 1, 1, 1, 0.784314 )
 texture = ExtResource( 8 )
 
 [node name="PowerupHolder" type="Node" parent="World"]
