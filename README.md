@@ -9,6 +9,7 @@
   * Add super-shot/penetration shot powerup
   * Add Toad Boss
   * Fix camera switching - very abrupt (perhaps interpolate camera)
+  * Add Credits
 
 ## Doing:
   * Make Title Screen
