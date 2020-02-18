@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -23,6 +23,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 384, 352 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 288, 224 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 296, 264 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 392, 352 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 264, 224 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 192, 232 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 584, 416 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 200, 480 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -189,6 +213,83 @@ position = Vector2( 120, 312 )
 
 [node name="Position2D4" type="Position2D" parent="SpawnLocations"]
 position = Vector2( -504, 312 )
+
+[node name="SpawnRegion" type="Area2D" parent="SpawnLocations"]
+position = Vector2( -200, 0 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion"]
+position = Vector2( 0, 32 )
+shape = SubResource( 2 )
+
+[node name="SpawnRegion2" type="Area2D" parent="SpawnLocations"]
+position = Vector2( -904, 0 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion2"]
+position = Vector2( -24, 32 )
+shape = SubResource( 3 )
+
+[node name="SpawnRegion3" type="Area2D" parent="SpawnLocations"]
+position = Vector2( -1608, 344 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion3"]
+position = Vector2( -24, 32 )
+shape = SubResource( 4 )
+
+[node name="SpawnRegion4" type="Area2D" parent="SpawnLocations"]
+position = Vector2( -1608, -352 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion4"]
+position = Vector2( -24, 32 )
+shape = SubResource( 4 )
+
+[node name="SpawnRegion5" type="Area2D" parent="SpawnLocations"]
+position = Vector2( -168, -832 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion5"]
+position = Vector2( -24, 32 )
+shape = SubResource( 5 )
+
+[node name="SpawnRegion6" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 656, -1408 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion6"]
+position = Vector2( -24, 32 )
+shape = SubResource( 6 )
+
+[node name="SpawnRegion7" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 656, -2112 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion7"]
+position = Vector2( -24, 32 )
+shape = SubResource( 6 )
+
+[node name="SpawnRegion8" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 1048, -320 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion8"]
+position = Vector2( -24, 32 )
+shape = SubResource( 8 )
+
+[node name="SpawnRegion9" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 1240, -1792 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion9"]
+position = Vector2( -24, 32 )
+shape = SubResource( 7 )
+
+[node name="SpawnRegion10" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 656, 1024 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion10"]
+position = Vector2( -24, 32 )
+shape = SubResource( 7 )
+
+[node name="SpawnRegion11" type="Area2D" parent="SpawnLocations"]
+position = Vector2( 664, 2168 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion11"]
+position = Vector2( -24, 32 )
+shape = SubResource( 9 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 8.0
