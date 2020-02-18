@@ -10,13 +10,14 @@ func _ready() -> void:
 	connect("body_entered", self, "on_Chest_body_entered")
 	
 func on_Chest_body_entered(body: PhysicsBody2D) -> void:
-	if body is Player:
+	if body.is_in_group("Players"):
 		var powerup
-		if whatPowerup == "heart":
+		var rand = round(rand_range(0,3))
+		if rand == 0:
 			powerup = HEART_POWERUP.instance()
-		elif whatPowerup == "penetration":
+		elif rand == 1:
 			powerup = PENETRATION_POWERUP.instance()
-		elif whatPowerup == "damage":
+		else:
 			powerup = DAMAGE_POWERUP.instance()
 		powerup.position = position + Vector2(0, 100)
 		get_parent().get_parent().get_node("PowerupHolder").add_child(powerup)
