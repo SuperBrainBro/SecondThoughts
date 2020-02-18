@@ -54,4 +54,4 @@ func _physics_process(_delta: float) -> void:
 	velocity.x += Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity = velocity.normalized() * speed
-	velocity = move_and_slide(velocity.normalized() * speed)
+	velocity = move_and_slide(velocity)
