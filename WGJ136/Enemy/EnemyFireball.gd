@@ -10,6 +10,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
 
-func on_EnemyFireball_body_entered(body: KinematicBody2D):
-	if body == Player:
-		body.health -= 10;
+func on_EnemyFireball_body_entered(body: PhysicsBody2D):
+	if body:
+		if body.is_in_group("Players"):
+			body.health -= 10;

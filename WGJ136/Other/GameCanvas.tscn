@@ -72,10 +72,10 @@ margin_left = 896.0
 margin_top = 616.0
 margin_right = 1240.0
 margin_bottom = 720.0
-max_value = 10.0
-value = 5.0
+max_value = 100.0
+value = 100.0
 texture_under = ExtResource( 5 )
-texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,10 +96,10 @@ margin_left = 56.0
 margin_top = 624.0
 margin_right = 400.0
 margin_bottom = 720.0
-max_value = 10.0
-value = 5.0
+max_value = 100.0
+value = 100.0
 texture_under = ExtResource( 5 )
-texture_over = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
