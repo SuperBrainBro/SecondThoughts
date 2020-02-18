@@ -8,9 +8,6 @@ script = ExtResource( 1 )
 
 [node name="Vignette" type="Node2D" parent="."]
 scale = Vector2( 0.72, 0.61 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Vignette"]
 modulate = Color( 1, 1, 1, 0.784314 )
