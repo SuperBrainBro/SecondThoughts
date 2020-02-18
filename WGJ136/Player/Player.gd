@@ -29,13 +29,12 @@ func _process(_delta: float) -> void:
 	($ActiveArrow as Sprite).visible = is_active
 	health_bar.value = health
 	if health <= 0:
-		health -= 1
-		is_dead = false
+		is_dead = true
 		emit_signal("died")
 		($"../../../ScoreTimer" as Timer).stop()
 		$"../../../CanvasLayer/Control/GameOverScreen".show()
 	if is_dead:
-		is_active = false
+		is_active = true
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
 		fireball.direction = position.direction_to(get_global_mouse_position())

@@ -3,12 +3,12 @@ class_name Fireball
 
 export var direction: Vector2
 export var speed: float = 650
-export var damage: float = 1
+export var damage: float
 export var fireMode: bool = true
 export var can_penetrate: bool
 
 func _ready():
-	print('Bullet Created')
+	print(damage)
 	$DespawnTimer.connect("timeout", self, "despawn")
 	connect("body_entered", self, "_on_Fireball_body_entered")
 	if fireMode == true:
@@ -31,19 +31,23 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 	if body is Enemy:
 		if fireMode == true:
 			print("fireMode was fire, so enemy was killed")
+			print(body.health)
+			if not body.is_fire_archer:
+				body.health -= damage
+				print(body.health)
 			if not can_penetrate:
 				queue_free()
-			if not body.is_fire_archer:
-				body.health -= 2
 		if fireMode == false:
 			print("fireMode was ice, so enemy was frozen")
-			body.health -= 1
+			print(body.health)
+			body.health -= damage
+			print(body.health)
+			body.frozen = true
+			body.get_node("FreezeTimer").start(3)
 			if body.is_fire_archer:
 				body.queue_free()
 			if not can_penetrate:
 				queue_free()
-			body.frozen = true
-			body.get_node("FreezeTimer").start(3)
 
 func despawn():
 	print('Destroyed Bullet')

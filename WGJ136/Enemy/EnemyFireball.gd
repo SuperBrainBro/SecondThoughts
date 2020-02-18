@@ -14,3 +14,4 @@ func on_EnemyFireball_body_entered(body: PhysicsBody2D):
 	if body:
 		if body.is_in_group("Players"):
 			body.health -= 10;
+			queue_free()
