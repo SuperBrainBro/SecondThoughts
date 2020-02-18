@@ -10,20 +10,6 @@
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
-[sub_resource type="Animation" id=1]
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/GameOverScreen:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 384, 352 )
 
@@ -39,14 +25,28 @@ extents = Vector2( 392, 352 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 264, 224 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 192, 232 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 584, 416 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 200, 480 )
+
+[sub_resource type="Animation" id=1]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/GameOverScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -102,194 +102,92 @@ position = Vector2( 1024, -240 )
 [node name="Chest2" parent="World/Objects" instance=ExtResource( 16 )]
 position = Vector2( -56, -248 )
 
+[node name="Spawn" type="Node" parent="World"]
+
+[node name="SpawnRegion" type="Area2D" parent="World/Spawn"]
+position = Vector2( -200, 0 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion"]
+position = Vector2( 0, 32 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="World/Spawn/SpawnRegion"]
+position = Vector2( -304, -248 )
+
+[node name="SpawnRegion2" type="Area2D" parent="World/Spawn"]
+position = Vector2( -904, 0 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion2"]
+position = Vector2( -24, 32 )
+shape = SubResource( 3 )
+
+[node name="SpawnRegion3" type="Area2D" parent="World/Spawn"]
+position = Vector2( -1608, 344 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion3"]
+position = Vector2( -24, 32 )
+shape = SubResource( 4 )
+
+[node name="SpawnRegion4" type="Area2D" parent="World/Spawn"]
+position = Vector2( -1608, -352 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion4"]
+position = Vector2( -24, 32 )
+shape = SubResource( 4 )
+
+[node name="SpawnRegion5" type="Area2D" parent="World/Spawn"]
+position = Vector2( -168, -832 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion5"]
+position = Vector2( -24, 32 )
+shape = SubResource( 5 )
+
+[node name="SpawnRegion6" type="Area2D" parent="World/Spawn"]
+position = Vector2( 656, -1408 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion6"]
+position = Vector2( -24, 32 )
+shape = SubResource( 6 )
+
+[node name="SpawnRegion7" type="Area2D" parent="World/Spawn"]
+position = Vector2( 656, -2112 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion7"]
+position = Vector2( -24, 32 )
+shape = SubResource( 6 )
+
+[node name="SpawnRegion8" type="Area2D" parent="World/Spawn"]
+position = Vector2( 1048, -320 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion8"]
+position = Vector2( -24, 32 )
+shape = SubResource( 7 )
+
+[node name="SpawnRegion9" type="Area2D" parent="World/Spawn"]
+position = Vector2( 1240, -1792 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion9"]
+position = Vector2( -24, 32 )
+shape = SubResource( 8 )
+
+[node name="SpawnRegion10" type="Area2D" parent="World/Spawn"]
+position = Vector2( 656, 1024 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion10"]
+position = Vector2( -24, 32 )
+shape = SubResource( 8 )
+
+[node name="SpawnRegion11" type="Area2D" parent="World/Spawn"]
+position = Vector2( 664, 2168 )
+
+[node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion11"]
+position = Vector2( -24, 32 )
+shape = SubResource( 9 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GameOver = SubResource( 1 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
-
-[node name="SpawnLocations" type="CanvasLayer" parent="."]
-
-[node name="Position2D" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -504, -248 )
-
-[node name="Position2D5" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1104, -96 )
-
-[node name="Position2D6" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1816, -192 )
-
-[node name="Position2D7" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1448, -200 )
-
-[node name="Position2D8" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1816, -472 )
-
-[node name="Position2D9" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1800, 280 )
-
-[node name="Position2D10" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1800, 536 )
-
-[node name="Position2D11" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1496, 296 )
-
-[node name="Position2D12" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -1496, 552 )
-
-[node name="Position2D13" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 168, 816 )
-
-[node name="Position2D14" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 1120, 824 )
-
-[node name="Position2D15" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 1104, 1432 )
-
-[node name="Position2D16" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 1104, 1056 )
-
-[node name="Position2D17" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 656, 1392 )
-
-[node name="Position2D18" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 208, 1360 )
-
-[node name="Position2D19" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 184, 1056 )
-
-[node name="Position2D20" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 512, 2496 )
-
-[node name="Position2D21" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 736, 2504 )
-
-[node name="Position2D22" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 912, -120 )
-
-[node name="Position2D23" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 1120, -120 )
-
-[node name="Position2D24" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 56, -592 )
-
-[node name="Position2D25" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 24, -928 )
-
-[node name="Position2D26" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -432, -1024 )
-
-[node name="Position2D27" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -424, -680 )
-
-[node name="Position2D28" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 464, -1496 )
-
-[node name="Position2D29" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 456, -1240 )
-
-[node name="Position2D30" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 656, -1424 )
-
-[node name="Position2D31" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 1056, -1856 )
-
-[node name="Position2D32" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 496, -2144 )
-
-[node name="Position2D33" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 776, -1920 )
-
-[node name="Position2D34" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 800, -2240 )
-
-[node name="Position2D35" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 616, -2728 )
-
-[node name="Position2D2" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 120, -248 )
-
-[node name="Position2D3" type="Position2D" parent="SpawnLocations"]
-position = Vector2( 120, 312 )
-
-[node name="Position2D4" type="Position2D" parent="SpawnLocations"]
-position = Vector2( -504, 312 )
-
-[node name="SpawnRegion" type="Area2D" parent="SpawnLocations"]
-position = Vector2( -200, 0 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion"]
-position = Vector2( 0, 32 )
-shape = SubResource( 2 )
-
-[node name="SpawnRegion2" type="Area2D" parent="SpawnLocations"]
-position = Vector2( -904, 0 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion2"]
-position = Vector2( -24, 32 )
-shape = SubResource( 3 )
-
-[node name="SpawnRegion3" type="Area2D" parent="SpawnLocations"]
-position = Vector2( -1608, 344 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion3"]
-position = Vector2( -24, 32 )
-shape = SubResource( 4 )
-
-[node name="SpawnRegion4" type="Area2D" parent="SpawnLocations"]
-position = Vector2( -1608, -352 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion4"]
-position = Vector2( -24, 32 )
-shape = SubResource( 4 )
-
-[node name="SpawnRegion5" type="Area2D" parent="SpawnLocations"]
-position = Vector2( -168, -832 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion5"]
-position = Vector2( -24, 32 )
-shape = SubResource( 5 )
-
-[node name="SpawnRegion6" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 656, -1408 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion6"]
-position = Vector2( -24, 32 )
-shape = SubResource( 6 )
-
-[node name="SpawnRegion7" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 656, -2112 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion7"]
-position = Vector2( -24, 32 )
-shape = SubResource( 6 )
-
-[node name="SpawnRegion8" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 1048, -320 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion8"]
-position = Vector2( -24, 32 )
-shape = SubResource( 8 )
-
-[node name="SpawnRegion9" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 1240, -1792 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion9"]
-position = Vector2( -24, 32 )
-shape = SubResource( 7 )
-
-[node name="SpawnRegion10" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 656, 1024 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion10"]
-position = Vector2( -24, 32 )
-shape = SubResource( 7 )
-
-[node name="SpawnRegion11" type="Area2D" parent="SpawnLocations"]
-position = Vector2( 664, 2168 )
-
-[node name="SpawnRect" type="CollisionShape2D" parent="SpawnLocations/SpawnRegion11"]
-position = Vector2( -24, 32 )
-shape = SubResource( 9 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 8.0
