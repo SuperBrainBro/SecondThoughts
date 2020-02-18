@@ -10,6 +10,7 @@ func _ready() -> void:
 	connect("body_entered", self, "on_EnemyFireball_body_entered")
 	add_child(despawn_timer)
 	despawn_timer.connect("timeout", self, "queue_free")
+	despawn_timer.start(5)
 
 func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
