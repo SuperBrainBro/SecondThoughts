@@ -1,7 +1,10 @@
 # WGJ136
  A game my friends and I created for Weekly Game Jam 136.
  
- # VINCENT DUDE THE HEALTH BARS ARE NOT UPDATING!
+ # KNOWN BUGS (Will be fixed by 19/2/2020)
+ 
+ * HEALTH BARS ARE NOT UPDATING
+ * MAJOR LAG
  
  ## To Do:
   * Make End Screen
