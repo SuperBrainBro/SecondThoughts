@@ -9,6 +9,8 @@ func _ready():
 
 
 func _on_Button_pressed(scene_to_load):
+	if scene_to_load == "quit":
+		get_tree().quit()
 	scene_path_to_load = scene_to_load
 	$FadeIn.show()
 	$FadeIn.fade_in()
