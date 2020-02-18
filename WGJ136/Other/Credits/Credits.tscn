@@ -1,0 +1,160 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Other/Credits/credits.tres" type="DynamicFont" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Credits"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Nooh:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 192 ), Vector2( 392, 192 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Vincent:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1280, 224 ), Vector2( 1280, 224 ), Vector2( 392, 232 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Lime:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, -32 ), Vector2( 320, -32 ), Vector2( 328, 328 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Yoyo:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -208, 712 ), Vector2( -208, 712 ), Vector2( 400, 464 ) ]
+}
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 552.0
+margin_top = 64.0
+margin_right = 740.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 1 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MadeBy" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 192.0
+margin_right = 375.0
+margin_bottom = 252.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Programmed By:"
+
+[node name="ArtBy" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 328.0
+margin_right = 464.0
+margin_bottom = 388.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Art Made By:"
+
+[node name="SoundsBy" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 464.0
+margin_right = 630.0
+margin_bottom = 524.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sound FX Made By:"
+
+[node name="Nooh" type="Label" parent="."]
+margin_left = 392.0
+margin_top = 192.0
+margin_right = 832.0
+margin_bottom = 252.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Nooh Alavi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vincent" type="Label" parent="."]
+margin_left = 392.0
+margin_top = 232.0
+margin_right = 832.0
+margin_bottom = 292.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Vincent Jenei"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lime" type="Label" parent="."]
+margin_left = 328.0
+margin_top = 328.0
+margin_right = 768.0
+margin_bottom = 388.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "LimeMouth"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yoyo" type="Label" parent="."]
+margin_left = 400.0
+margin_top = 464.0
+margin_right = 840.0
+margin_bottom = 524.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+text = "Yahya"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Credits"
+anims/Credits = SubResource( 1 )
