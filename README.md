@@ -5,6 +5,7 @@
  
  * HEALTH BARS ARE NOT UPDATING
  * MAJOR LAG
+ * ONE sPAWN LOCaTIOn IS BROKEN
  
  ## To Do:
   * Make End Screen
