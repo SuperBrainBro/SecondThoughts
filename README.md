@@ -1,7 +1,7 @@
 # WGJ136
  A game my friends and I created for Weekly Game Jam 136.
  
- # KNOWN BUGS (Will be fixed by 19/2/2020)
+ # KNOWN BUGS (Will be fixed soon!)
  
  * HEALTH BARS ARE NOT UPDATING
  * MAJOR LAG
