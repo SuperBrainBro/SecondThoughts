@@ -10,31 +10,31 @@
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 384, 352 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 288, 224 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 296, 264 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 392, 352 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 264, 224 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 192, 232 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 584, 416 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 200, 480 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/GameOverScreen:modulate")
 tracks/0/interp = 1
@@ -109,7 +109,7 @@ position = Vector2( -200, 0 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion"]
 position = Vector2( 0, 32 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="World/Spawn/SpawnRegion"]
 position = Vector2( -304, -248 )
@@ -119,73 +119,73 @@ position = Vector2( -904, 0 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion2"]
 position = Vector2( -24, 32 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="SpawnRegion3" type="Area2D" parent="World/Spawn"]
 position = Vector2( -1608, 344 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion3"]
 position = Vector2( -24, 32 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="SpawnRegion4" type="Area2D" parent="World/Spawn"]
 position = Vector2( -1608, -352 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion4"]
 position = Vector2( -24, 32 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="SpawnRegion5" type="Area2D" parent="World/Spawn"]
 position = Vector2( -168, -832 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion5"]
 position = Vector2( -24, 32 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="SpawnRegion6" type="Area2D" parent="World/Spawn"]
 position = Vector2( 656, -1408 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion6"]
 position = Vector2( -24, 32 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="SpawnRegion7" type="Area2D" parent="World/Spawn"]
 position = Vector2( 656, -2112 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion7"]
 position = Vector2( -24, 32 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="SpawnRegion8" type="Area2D" parent="World/Spawn"]
 position = Vector2( 1048, -320 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion8"]
 position = Vector2( -24, 32 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="SpawnRegion9" type="Area2D" parent="World/Spawn"]
 position = Vector2( 1240, -1792 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion9"]
 position = Vector2( -24, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="SpawnRegion10" type="Area2D" parent="World/Spawn"]
 position = Vector2( 656, 1024 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion10"]
 position = Vector2( -24, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="SpawnRegion11" type="Area2D" parent="World/Spawn"]
 position = Vector2( 664, 2168 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/Spawn/SpawnRegion11"]
 position = Vector2( -24, 32 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/GameOver = SubResource( 1 )
+anims/GameOver = SubResource( 9 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
