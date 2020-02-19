@@ -20,12 +20,15 @@ export var linear_velocity: Vector2
 
 func _ready() -> void:
 	randomize()
+	#$HealthBar.max_value = health
+	#$HealthBar.value = health
 	target_player = player1 if randf() > 0.5 else player2
 	$ShootTimer.connect("timeout", self, "shoot")
 	player1.connect("died", self, "queue_free")
 	player2.connect("died", self, "queue_free")
 
 func _physics_process(delta: float) -> void:
+	#$HealthBar.value = health
 	if frozen == true:
 		return
 	if target_player:

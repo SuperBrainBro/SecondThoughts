@@ -21,6 +21,9 @@ onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
 onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
 var health_bar: TextureProgress
 
+func _ready() -> void:
+	health = 500
+
 func _process(_delta: float) -> void:
 	if is_frostbite:
 		health_bar = $"/root/Main/CanvasLayer/Control/HealthBarIce"
