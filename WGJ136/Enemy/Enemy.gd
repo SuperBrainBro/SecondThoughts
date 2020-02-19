@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if health <= 0:
+		$"/root/Main".score += 1
 		queue_free()
 
 #func on_Enemy_area_entered(area: Area2D):

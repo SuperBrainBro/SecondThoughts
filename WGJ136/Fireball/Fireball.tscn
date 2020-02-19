@@ -30,6 +30,7 @@ region_rect = Rect2( 44, 44, 52, 52 )
 shape = SubResource( 1 )
 
 [node name="FireSound" parent="." instance=ExtResource( 4 )]
+volume_db = -1.0
 
 [node name="IceSound" parent="." instance=ExtResource( 3 )]
 

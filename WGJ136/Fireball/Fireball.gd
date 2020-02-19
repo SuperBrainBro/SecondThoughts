@@ -15,14 +15,14 @@ func _ready():
 		print('fireMode is 1')
 		$Sprite.texture = preload("res://Fireball/fireball.png")
 		$CPUParticles2D.texture = preload("res://Fireball/fireball.png")
-		$FireSound.volume_db = 0
+		$FireSound.volume_db = -2.5
 		$IceSound.volume_db = -80
 	elif fireMode == false:
 		print('fireMode is 0')
 		$Sprite.texture = preload("res://Fireball/frost_thing_02.png")
 		$CPUParticles2D.texture = preload("res://Fireball/frost_thing_02.png")
 		$FireSound.volume_db = -80
-		$IceSound.volume_db = 0
+		$IceSound.volume_db = -5
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
@@ -35,7 +35,7 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 			if not body.is_fire_archer:
 				body.health -= damage
 				print(body.health)
-			if not can_penetrate:
+			if not can_penetrate:				
 				queue_free()
 		if fireMode == false:
 			print("fireMode was ice, so enemy was frozen")
@@ -45,6 +45,7 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 			body.frozen = true
 			body.get_node("FreezeTimer").start(3)
 			if body.is_fire_archer:
+				$"/root/Main".score += 1
 				body.queue_free()
 			if not can_penetrate:
 				queue_free()

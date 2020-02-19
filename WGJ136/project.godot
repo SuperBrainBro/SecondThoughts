@@ -78,6 +78,10 @@ config/name="Second Thoughts"
 config/description="Single Player Co-Op Game in A Dangerous Dungeon. Made For Weekly Game Jam 136!"
 run/main_scene="res://Other/TitleScreen.tscn"
 
+[autoload]
+
+Music="*res://Music.tscn"
+
 [display]
 
 window/size/width=1280

@@ -76,7 +76,7 @@ func _on_SpawnTimer_timeout():
 
 func _on_ScoreTimer_timeout():
 	if not instructions:
-		score += 1
+		return
 	
 func _on_PlayAgainButton_Pressed() -> void:
 	if not instructions:

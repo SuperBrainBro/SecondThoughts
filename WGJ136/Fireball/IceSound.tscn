@@ -4,5 +4,5 @@
 
 [node name="IceSound" type="AudioStreamPlayer2D"]
 stream = ExtResource( 1 )
-volume_db = -80.0
+volume_db = -10.0
 autoplay = true
