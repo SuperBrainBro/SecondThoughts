@@ -10,7 +10,7 @@ func _ready() -> void:
 	connect("body_entered", self, "on_EnemyFireball_body_entered")
 	add_child(despawn_timer)
 	despawn_timer.connect("timeout", self, "queue_free")
-	despawn_timer.start(5)
+	despawn_timer.start(10)
 
 func _physics_process(delta: float) -> void:
 	position += direction * delta * speed
@@ -18,5 +18,5 @@ func _physics_process(delta: float) -> void:
 func on_EnemyFireball_body_entered(body: PhysicsBody2D):
 	if body:
 		if body.is_in_group("Players"):
-			body.health -= 20;
+			body.health -= 20
 			queue_free()
