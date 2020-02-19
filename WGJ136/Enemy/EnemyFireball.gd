@@ -18,5 +18,5 @@ func _physics_process(delta: float) -> void:
 func on_EnemyFireball_body_entered(body: PhysicsBody2D):
 	if body:
 		if body.is_in_group("Players"):
-			body.health -= 10;
+			body.health -= 20;
 			queue_free()
