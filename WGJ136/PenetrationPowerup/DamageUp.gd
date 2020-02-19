@@ -6,5 +6,5 @@ func _ready() -> void:
 	
 func _on_Body_Entered(body: PhysicsBody2D) -> void:
 	if body is Player:
+		body.damage += 1;
 		queue_free()
-		body.damage += 2;

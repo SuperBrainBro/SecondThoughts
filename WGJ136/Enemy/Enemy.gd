@@ -44,24 +44,27 @@ func _process(delta: float) -> void:
 	if health <= 0:
 		queue_free()
 
-func on_Enemy_area_entered(area: Area2D):
-	if area.is_in_group("Fireballs"):
-		if area.fireMode == true:
-			print("fireMode was fire, so enemy was killed")
-			if not area.can_penetrate:
-				area.queue_free()
-			if not is_fire_archer:
-				health -= area.damage + 1
-		if area.fireMode == false:
-			print("fireMode was ice, so enemy was frozen")
-			health -= area.damage
-			if is_fire_archer:
-				queue_free()
-			if not area.can_penetrate:
-				area.queue_free()
-			frozen = true
-			$FreezeTimer.start(4)
-			
+#func on_Enemy_area_entered(area: Area2D):
+#	if area.is_in_group("Fireballs"):
+#		if area.fireMode == true:
+#			#print("fireMode was fire, so enemy was killed")
+#			if not is_fire_archer:
+#				print(health)
+#				health -= area.damage
+#				print(health)
+#			if not area.can_penetrate:
+#				area.queue_free()
+#		if area.fireMode == false:
+#			#print("fireMode was ice, so enemy was frozen")
+#			print(health)
+#			health -= area.damage
+#			print(health)
+#			if is_fire_archer:
+#				queue_free()
+#			frozen = true
+#			$FreezeTimer.start(4)
+#			if not area.can_penetrate:
+#				area.queue_free()
 func _on_FreezeTimer_timeout():
 	frozen = false
 
