@@ -58,16 +58,6 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player/Player.gd"
-}, {
-"base": "Node",
-"class": "Script1",
-"language": "GDScript",
-"path": "res://Other/bug/Script1.gd"
-}, {
-"base": "Node",
-"class": "Script2",
-"language": "GDScript",
-"path": "res://Other/bug/Script2.gd"
 } ]
 _global_script_class_icons={
 "Chest": "",
@@ -79,9 +69,7 @@ _global_script_class_icons={
 "Heart": "",
 "Main": "",
 "PenetrationPowerup": "",
-"Player": "",
-"Script1": "",
-"Script2": ""
+"Player": ""
 }
 
 [application]
