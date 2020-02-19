@@ -1,12 +1,6 @@
 # WGJ136
  A game my friends and I created for Weekly Game Jam 136.
  
- # KNOWN BUGS (Will be fixed soon!)
- 
- * HEALTH BARS ARE NOT UPDATING
- * MAJOR LAG
- * ONE SPAWN LOCATION IS BROKEN
- 
  ## To Do:
   * Make End Screen
   * Rework enemy spawning
