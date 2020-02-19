@@ -29,16 +29,16 @@ extents = Vector2( 264, 224 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 192, 232 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 192, 160 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 584, 415 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 200, 480 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Control/GameOverScreen:modulate")
 tracks/0/interp = 1
@@ -248,7 +248,7 @@ position = Vector2( 1240, -1792 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion9"]
 position = Vector2( -24, 32 )
-shape = SubResource( 10 )
+shape = SubResource( 7 )
 
 [node name="Position2D59" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion9"]
 position = Vector2( -152, 128 )
@@ -360,7 +360,7 @@ position = Vector2( 472, -287 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion10"]
 position = Vector2( -24, 32 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="SpawnRegion11" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 664, 2168 )
@@ -406,10 +406,10 @@ position = Vector2( -152, -304 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion11"]
 position = Vector2( -24, 32 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/GameOver = SubResource( 9 )
+anims/GameOver = SubResource( 10 )
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
