@@ -29,6 +29,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+scale = Vector2( 1, 3 )
 enabled = true
 cast_to = Vector2( 50, 0 )
 [connection signal="timeout" from="FreezeTimer" to="." method="_on_FreezeTimer_timeout"]

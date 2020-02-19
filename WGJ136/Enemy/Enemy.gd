@@ -32,13 +32,14 @@ func _physics_process(delta: float) -> void:
 		$Sprite.look_at(target_player.position)
 		if is_fire_archer:
 			return
-		linear_velocity += position.direction_to(target_player.position)
-		linear_velocity = linear_velocity.normalized() * follow_speed
-		move_and_slide(linear_velocity)
+		$RayCast2D.set_cast_to(((target_player.position.normalized()) * 50))
 		if ($RayCast2D as RayCast2D).is_colliding():
 			var collider = $RayCast2D.get_collider()
 			if collider.is_in_group("Players"):
 				collider.health -= damage
+		linear_velocity += position.direction_to(target_player.position)
+		linear_velocity = linear_velocity.normalized() * follow_speed
+		move_and_slide(linear_velocity)
 
 func _process(delta: float) -> void:
 	if health <= 0:
