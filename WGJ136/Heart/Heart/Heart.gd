@@ -6,5 +6,6 @@ func _ready() -> void:
 
 func on_Heart_body_entered(body: PhysicsBody2D):
 	if body.is_in_group("Players"):
-		body.health = 100
-		queue_free()
+		if body.health < 500:
+			body.health = 500
+			queue_free()
