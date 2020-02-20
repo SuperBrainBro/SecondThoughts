@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy/FixedSprites/Wizard1.png" type="Texture" id=2]
+[ext_resource path="res://playerparticles.tscn" type="PackedScene" id=3]
 
 [node name="Player2" instance=ExtResource( 1 )]
 position = Vector2( 0, 8 )
-speed = 300.0
+speed = 325.0
 damage = 2.0
+acceleration = 1000.0
 
 [node name="Sprite" parent="." index="1"]
 rotation = 0.0
@@ -14,3 +16,5 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 one_way_collision_margin = 0.0
+
+[node name="CPUParticles2D" parent="." index="4" instance=ExtResource( 3 )]

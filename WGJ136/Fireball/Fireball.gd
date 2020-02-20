@@ -38,6 +38,9 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 				body.health -= damage
 				audioFX.playEnemyHit()
 				body.anim.play("damageEffect")
+				var blood = body.particle.instance()
+				blood.position = body.position
+				$"/root/Main/World/FireballHolder".add_child(blood)
 				print(body.health)
 			if not can_penetrate:				
 				queue_free()
@@ -46,6 +49,9 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 			print(body.health)
 			body.health -= damage
 			body.anim.play("damageEffect")
+			var blood = body.particle.instance()
+			blood.position = body.position
+			$"/root/Main/World/FireballHolder".add_child(blood)
 			print(body.health)
 			body.frozen = true
 			body.get_node("FreezeTimer").start(3)

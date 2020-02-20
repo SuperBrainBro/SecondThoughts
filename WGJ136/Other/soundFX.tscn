@@ -10,27 +10,19 @@
 [node name="soundFX" type="Node"]
 script = ExtResource( 2 )
 
-[node name="ChestSound" type="AudioStreamPlayer2D" parent="."]
+[node name="ChestSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 8.0
-max_distance = 4000.0
 
-[node name="EnemyKilledSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
-volume_db = 2.0
-max_distance = 4000.0
-
-[node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
+[node name="EnemyHitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = 3.0
-max_distance = 4000.0
+volume_db = -5.0
 
-[node name="PowerUpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
-volume_db = 8.0
-max_distance = 4000.0
-
-[node name="SwitchPlayers" type="AudioStreamPlayer2D" parent="."]
+[node name="SwitchPlayers" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = 4.0
-max_distance = 4000.0
+
+[node name="PowerUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="EnemyKilledSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0

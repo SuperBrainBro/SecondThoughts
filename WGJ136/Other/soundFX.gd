@@ -1,11 +1,11 @@
 extends Node
 class_name soundFX
 
-onready var chestFX: AudioStreamPlayer2D = $ChestSound
-onready var enemyHitFX: AudioStreamPlayer2D = $EnemyHitSound
-onready var enemyKillFX: AudioStreamPlayer2D = $EnemyKilledSound
-onready var powerupFX: AudioStreamPlayer2D = $PowerUpSound
-onready var switchFX: AudioStreamPlayer2D = $SwitchPlayers
+onready var chestFX: AudioStreamPlayer = $ChestSound
+onready var enemyHitFX: AudioStreamPlayer = $EnemyHitSound
+onready var enemyKillFX: AudioStreamPlayer = $EnemyKilledSound
+onready var powerupFX: AudioStreamPlayer = $PowerUpSound
+onready var switchFX: AudioStreamPlayer = $SwitchPlayers
 
 func playChest():
 	chestFX.play()

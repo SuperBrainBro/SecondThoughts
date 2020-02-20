@@ -21,6 +21,7 @@ export var linear_velocity: Vector2
 onready var audioFX: soundFX = $"/root/Main/soundFX"
 
 onready var anim: AnimationPlayer = $DamageAnim
+const particle: PackedScene = preload("res://Other/DamagePart.tscn")
 
 func _ready() -> void:
 	randomize()
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		linear_velocity = linear_velocity.normalized() * follow_speed
 		move_and_slide(linear_velocity)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if health <= 0:
 		$"/root/Main".score += 1
 		audioFX.playEnemyKill()

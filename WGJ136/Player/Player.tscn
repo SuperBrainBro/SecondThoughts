@@ -13,6 +13,7 @@ extents = Vector2( 30, 30 )
 ]]
 script = ExtResource( 2 )
 health = 500.0
+acceleration = 10000.0
 
 [node name="Shader" parent="." instance=ExtResource( 4 )]
 

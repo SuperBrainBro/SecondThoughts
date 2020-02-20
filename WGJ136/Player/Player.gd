@@ -11,7 +11,7 @@ export var is_active: bool = true
 export var health: float = 200
 export var damage: float = 1
 export var is_frostbite: bool
-
+export var acceleration: float
 export var intendedFireMode: bool = false
 export var is_dead: bool = false
 export var can_penetrate: bool
@@ -60,16 +60,27 @@ func _process(_delta: float) -> void:
 		shoot(Vector2(0, -1))
 	if Input.is_action_just_pressed("shoot_down") and is_active:
 		shoot(Vector2(0, 1))
-func _physics_process(_delta: float) -> void:
+		
+func _physics_process(delta):
+	
 	if not is_active:
 		return
+	
 	if followMouse:
 		spr.look_at(get_global_mouse_position())
-	velocity = Vector2()
-	velocity.x += Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	velocity.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	velocity = velocity.normalized() * speed
+	
+	var velocity1 = Vector2()
+	velocity1.x += Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	velocity1.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	velocity1 = velocity1.normalized()
+
+
+	velocity = velocity1 * speed
+	
+
 	velocity = move_and_slide(velocity)
+
+	
 
 func shoot(pos: Vector2):
 	var fireball = FIREBALL_SCENE.instance()

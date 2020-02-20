@@ -71,11 +71,13 @@ position = Vector2( -577.721, -446.161 )
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
 position = Vector2( 0, 50 )
 health = 200.0
+acceleration = 0.0
 
 [node name="Camera2D" parent="World/PlayerHolder/Player1" instance=ExtResource( 4 )]
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
 position = Vector2( 0, -50 )
+acceleration = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="World/PlayerHolder/Player2"]
 script = ExtResource( 6 )
@@ -417,7 +419,7 @@ anims/GameOver = SubResource( 10 )
 [node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 20.0
 one_shot = true
 
 [node name="ScoreTimer" type="Timer" parent="."]

@@ -161,165 +161,165 @@ func spawn(numb):
 			1: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			2: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion2".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			3: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion3".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			4: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion4".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			5: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion5".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			6: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion6".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			7: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion7".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			8: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion8".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			9: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion9".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			10: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion10".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
 			11: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion11".get_children():
 				if(spawn_location is Position2D): 
 					var enemy: Enemy
-					var rand_num = round(rand_range(0, 4))
+					var rand_num = round(rand_range(0, 6))
 					if rand_num == 0:
 						enemy = main.FIRE_ARCHER_SCENE.instance()
-					elif rand_num == 1 or rand_num == 2:
+					elif rand_num == 1 or rand_num == 2 or rand_num == 3:
 						enemy = main.SKELETON_SCENE.instance()
 					else:
 						enemy = main.OGRE_SCENE.instance()
 					enemy.position = spawn_location.global_position
 					$"/root/Main/World/EnemyHolder".add_child(enemy)
-					timer.start(2)
+					timer.start(8)
 				else:
 					return
