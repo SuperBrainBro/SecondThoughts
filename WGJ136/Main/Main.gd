@@ -20,6 +20,8 @@ onready var intendedIntendedFireMode: bool = true;
 export var score: int
 export var instructions: bool
 
+onready var audioFX: soundFX = $"/root/Main/soundFX"
+
 func _ready() -> void:
 	randomize()
 	
@@ -46,6 +48,7 @@ func _process(_delta: float) -> void:
 		$CanvasLayer/Control/ScoreLabel.text = "Score: " + str(score)
 	if Input.is_action_just_pressed("change_player"):
 		print('Switched Player')
+		audioFX.playSwitch()
 		
 		player1.is_active = not player1.is_active
 		player2.is_active = not player2.is_active

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Other/Jump49.wav" type="AudioStream" id=1]
+[ext_resource path="res://Other/soundFX.gd" type="Script" id=2]
+[ext_resource path="res://Other/Enemy_Killed.wav" type="AudioStream" id=3]
+[ext_resource path="res://Other/OpenChest.wav" type="AudioStream" id=4]
+[ext_resource path="res://Other/HitSound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Other/PowerUp.wav" type="AudioStream" id=6]
+
+[node name="soundFX" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ChestSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 8.0
+max_distance = 4000.0
+
+[node name="EnemyKilledSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 2.0
+max_distance = 4000.0
+
+[node name="EnemyHitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = 3.0
+max_distance = 4000.0
+
+[node name="PowerUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = 8.0
+max_distance = 4000.0
+
+[node name="SwitchPlayers" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = 4.0
+max_distance = 4000.0

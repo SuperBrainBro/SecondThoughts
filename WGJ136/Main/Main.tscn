@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Other/GameCanvas.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Shader/black-vignette-png-2.png" type="Texture" id=8]
 [ext_resource path="res://Other/Cool Text - YOU WONThanks for playing 349674433397722.png" type="Texture" id=9]
+[ext_resource path="res://Other/soundFX.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
@@ -426,6 +427,8 @@ autostart = true
 position = Vector2( 672, 3688 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
+
+[node name="soundFX" parent="." instance=ExtResource( 10 )]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion_body_entered"]
 [connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion2" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion2_body_entered"]

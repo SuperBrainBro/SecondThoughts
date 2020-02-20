@@ -5,7 +5,7 @@
 
 [node name="Player1" instance=ExtResource( 1 )]
 position = Vector2( 0.663391, -0.663422 )
-speed = 200.0
+speed = 275.0
 damage = 1.5
 is_frostbite = true
 

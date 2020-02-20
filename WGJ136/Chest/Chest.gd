@@ -6,7 +6,11 @@ const PENETRATION_POWERUP: PackedScene = preload("res://PenetrationPowerup/Penet
 const DAMAGE_POWERUP: PackedScene = preload("res://PenetrationPowerup/Damage Up.tscn")
 var opened: bool = false
 export var whatPowerup: String
+
+onready var audioFX: soundFX = $"/root/Main/soundFX"
+
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "on_Chest_body_entered")
 	
 func on_Chest_body_entered(body: PhysicsBody2D) -> void:
@@ -23,4 +27,5 @@ func on_Chest_body_entered(body: PhysicsBody2D) -> void:
 		powerup.position = position + Vector2(0, 150)
 		get_parent().get_parent().get_node("PowerupHolder").add_child(powerup)
 		opened = true
+		audioFX.playChest()
 		$Sprite.texture = preload("res://Objects/chest_02_open.png")

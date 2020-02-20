@@ -7,6 +7,8 @@ export var damage: float
 export var fireMode: bool = true
 export var can_penetrate: bool
 
+onready var audioFX: soundFX = $"/root/Main/soundFX"
+
 func _ready():
 	print(damage)
 	$DespawnTimer.connect("timeout", self, "despawn")
@@ -30,10 +32,12 @@ func _physics_process(delta: float) -> void:
 func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 	if body is Enemy:
 		if fireMode == true:
-			print("fireMode was fire, so enemy was killed")
+			print("fireMode was fire, so enemy was killed")			
 			print(body.health)
 			if not body.is_fire_archer:
 				body.health -= damage
+				audioFX.playEnemyHit()
+				body.anim.play("damageEffect")
 				print(body.health)
 			if not can_penetrate:				
 				queue_free()
@@ -41,12 +45,16 @@ func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 			print("fireMode was ice, so enemy was frozen")
 			print(body.health)
 			body.health -= damage
+			body.anim.play("damageEffect")
 			print(body.health)
 			body.frozen = true
 			body.get_node("FreezeTimer").start(3)
 			if body.is_fire_archer:
 				$"/root/Main".score += 1
+				audioFX.playEnemyKill()
 				body.queue_free()
+			else:
+				audioFX.playEnemyHit()
 			if not can_penetrate:
 				queue_free()
 

@@ -18,6 +18,10 @@ var target_player
 
 export var linear_velocity: Vector2
 
+onready var audioFX: soundFX = $"/root/Main/soundFX"
+
+onready var anim: AnimationPlayer = $DamageAnim
+
 func _ready() -> void:
 	randomize()
 	#$HealthBar.max_value = health
@@ -47,6 +51,7 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	if health <= 0:
 		$"/root/Main".score += 1
+		audioFX.playEnemyKill()
 		queue_free()
 
 #func on_Enemy_area_entered(area: Area2D):
