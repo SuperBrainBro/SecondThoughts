@@ -17,14 +17,14 @@ func _ready():
 		print('fireMode is 1')
 		$Sprite.texture = preload("res://Fireball/fireball.png")
 		$CPUParticles2D.texture = preload("res://Fireball/fireball.png")
-		$FireSound.volume_db = -2.5
+		$FireSound.volume_db = -1
 		$IceSound.volume_db = -80
 	elif fireMode == false:
 		print('fireMode is 0')
 		$Sprite.texture = preload("res://Fireball/frost_thing_02.png")
 		$CPUParticles2D.texture = preload("res://Fireball/frost_thing_02.png")
 		$FireSound.volume_db = -80
-		$IceSound.volume_db = -5
+		$IceSound.volume_db = -3.5
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta

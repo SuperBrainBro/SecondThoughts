@@ -9,6 +9,8 @@ var _previous_x = 0.0
 var _previous_y = 0.0
 var _last_offset = Vector2(0, 0)
 
+var playerCam: bool
+
 # Shake with decreasing intensity while there's time remaining.
 func _process(delta):
 	# Only shake when there's shake time remaining.
@@ -50,3 +52,9 @@ func shake(duration, frequency, amplitude):
 	# Reset previous offset, if any.
 	set_offset(get_offset() - _last_offset)
 	_last_offset = Vector2(0, 0)
+
+func characterChange():
+	if playerCam == true:
+		return
+	elif playerCam == false:
+		return

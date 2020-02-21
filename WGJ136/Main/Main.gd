@@ -9,11 +9,10 @@ const FIRE_ARCHER_SCENE = preload("res://Enemy/FireArcher.tscn")
 onready var player1: Player = $World/PlayerHolder/Player1
 onready var player2: Player = $World/PlayerHolder/Player2
 
-onready var shader1: Camera2D = $World/PlayerHolder/Player1/Camera2D/Vignette
-onready var shader2: Camera2D = $World/PlayerHolder/Player2/Camera2D/Vignette
+#onready var cam1: Camera2D = $World/PlayerHolder/Player1/Camera2D
+#onready var cam2: Camera2D = $World/PlayerHolder/Player2/Camera2D
 
-onready var cam1: Camera2D = $World/PlayerHolder/Player1/Camera2D
-onready var cam2: Camera2D = $World/PlayerHolder/Player2/Camera2D
+onready var cam: CameraMain = $World/Camera/NewCamera
 
 onready var intendedIntendedFireMode: bool = true;
 
@@ -28,11 +27,7 @@ func _ready() -> void:
 	player1.is_active = false
 	player2.is_active = true
 	
-	cam1.current = player1.is_active
-	cam2.current = player2.is_active
-	
-	shader1.visible = player1.is_active
-	shader2.visible = player2.is_active
+	cam.playerCam = not cam.playerCam
 	
 	player1.intendedFireMode = false
 	player2.intendedFireMode = true
@@ -53,11 +48,7 @@ func _process(_delta: float) -> void:
 		player1.is_active = not player1.is_active
 		player2.is_active = not player2.is_active
 		
-		cam1.current = player1.is_active
-		cam2.current = player2.is_active
-		
-		shader1.visible = player1.is_active
-		shader2.visible = player2.is_active
+		cam.playerCam = not cam.playerCam
 		
 		player1.intendedFireMode = false
 		player2.intendedFireMode = true

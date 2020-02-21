@@ -3,7 +3,14 @@ class_name Player
 
 signal died()
 
+onready var collider: CollisionShape2D = $CollisionShape2D
+
 const FIREBALL_SCENE: PackedScene = preload("res://Fireball/Fireball.tscn")
+
+onready var player1: Player = $"/root/Main/World/PlayerHolder/Player1"
+onready var player2: Player = $"/root/Main/World/PlayerHolder/Player2"
+
+export var linear_velocity: Vector2
 
 export var velocity: Vector2
 export var speed: float
@@ -19,8 +26,7 @@ export var can_penetrate: bool
 export var followMouse: bool = true
 
 onready var spr: Sprite = $Sprite
-onready var cam1: Camera2D = $"../../PlayerHolder/Player1/Camera2D"
-onready var cam2: Camera2D = $"../../PlayerHolder/Player2/Camera2D"
+onready var cam: CameraMain = $"/root/Main/World/Camera/NewCamera"
 var health_bar: TextureProgress
 
 func _ready() -> void:
@@ -50,8 +56,7 @@ func _process(_delta: float) -> void:
 		fireball.can_penetrate = can_penetrate
 		fireball.damage = damage
 		$"../../FireballHolder".add_child(fireball)
-		cam1.shake(0.3,64,11)
-		cam2.shake(0.3,64,11)
+		cam.shake(0.3,64,11)
 	if Input.is_action_just_pressed("shoot_left") and is_active:
 		shoot(Vector2(-1, 0))
 	if Input.is_action_just_pressed("shoot_right") and is_active:
@@ -62,14 +67,30 @@ func _process(_delta: float) -> void:
 		shoot(Vector2(0, 1))
 		
 func _physics_process(delta):
-	
+	var velocity1 = Vector2()
 	if not is_active:
+		if is_frostbite:
+			player1.collider.scale = Vector2(.8, .8)
+			player2.collider.scale = Vector2(.15, .15)
+			player1.z_index = 0
+			player2.z_index = 1
+			linear_velocity = position.direction_to(player2.position)
+			spr.look_at(player2.position)
+			linear_velocity = linear_velocity.normalized() * speed/1.5
+		else:
+			player1.collider.scale = Vector2(.15, .15)
+			player2.collider.scale = Vector2(.8, .8)
+			player2.z_index = 0
+			player1.z_index = 1
+			linear_velocity = position.direction_to(player1.position)
+			spr.look_at(player1.position)
+			linear_velocity = linear_velocity.normalized() * speed/1.5
+		move_and_slide(linear_velocity)
 		return
-	
+		
 	if followMouse:
 		spr.look_at(get_global_mouse_position())
 	
-	var velocity1 = Vector2()
 	velocity1.x += Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity1.y += Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	velocity1 = velocity1.normalized()
@@ -93,5 +114,4 @@ func shoot(pos: Vector2):
 	fireball.can_penetrate = can_penetrate
 	fireball.damage = damage
 	$"../../FireballHolder".add_child(fireball)
-	cam1.shake(0.3,64,11)
-	cam2.shake(0.3,64,11)
+	cam.shake(0.3,64,11)

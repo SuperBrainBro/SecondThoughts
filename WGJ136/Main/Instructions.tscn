@@ -21,12 +21,14 @@ tile_data = PoolIntArray( -4128767, 35, 0, -4128766, 35, 0, -4128765, 35, 0, -41
 
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
 position = Vector2( 456, 192 )
+collision_layer = 1
 
 [node name="Camera2D" parent="World/PlayerHolder/Player1" instance=ExtResource( 4 )]
 current = true
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 2 )]
 position = Vector2( 456, 400 )
+collision_layer = 1
 
 [node name="Camera2D" parent="World/PlayerHolder/Player2" instance=ExtResource( 4 )]
 
