@@ -71,12 +71,14 @@ position = Vector2( -577.721, -446.161 )
 [node name="Player1" parent="World/PlayerHolder" instance=ExtResource( 3 )]
 position = Vector2( 0, 50 )
 collision_layer = 1
+collision/safe_margin = 0.08
 health = 200.0
 acceleration = 0.0
 
 [node name="Player2" parent="World/PlayerHolder" instance=ExtResource( 1 )]
 position = Vector2( 0, -50 )
 collision_layer = 1
+collision/safe_margin = 0.08
 acceleration = 0.0
 
 [node name="PowerupHolder" type="Node" parent="World"]

@@ -42,15 +42,17 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		is_dead = true
 		emit_signal("died")
+	if player1.is_dead and player2.is_dead:
 		($"../../../ScoreTimer" as Timer).stop()
 		$"../../../CanvasLayer/Control/GameOverScreen".show()
 	if is_dead:
-		is_active = true
+		return	
+	
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
 		fireball.direction = position.direction_to(get_global_mouse_position())
 		followMouse = true
-		position += -fireball.direction * 15
+		#position += -fireball.direction * 15
 		fireball.position = position
 		fireball.fireMode = intendedFireMode
 		fireball.can_penetrate = can_penetrate
@@ -67,27 +69,31 @@ func _process(_delta: float) -> void:
 		shoot(Vector2(0, 1))
 		
 func _physics_process(delta):
+
 	var velocity1 = Vector2()
 	if not is_active:
 		if is_frostbite:
-			player1.collider.scale = Vector2(.8, .8)
+			player1.collider.scale = Vector2(1, 1)
 			player2.collider.scale = Vector2(.15, .15)
 			player1.z_index = 0
 			player2.z_index = 1
 			linear_velocity = position.direction_to(player2.position)
 			spr.look_at(player2.position)
-			linear_velocity = linear_velocity.normalized() * speed/1.5
+			linear_velocity = linear_velocity.normalized() * speed/2
 		else:
 			player1.collider.scale = Vector2(.15, .15)
-			player2.collider.scale = Vector2(.8, .8)
+			player2.collider.scale = Vector2(1, 1)
 			player2.z_index = 0
 			player1.z_index = 1
 			linear_velocity = position.direction_to(player1.position)
 			spr.look_at(player1.position)
-			linear_velocity = linear_velocity.normalized() * speed/1.5
+			linear_velocity = linear_velocity.normalized() * speed/2
+		if is_dead:
+			return
 		move_and_slide(linear_velocity)
 		return
-		
+	if is_dead:
+		return
 	if followMouse:
 		spr.look_at(get_global_mouse_position())
 	
@@ -108,7 +114,7 @@ func shoot(pos: Vector2):
 	fireball.direction = pos
 	followMouse = false
 	spr.look_at(position+pos)
-	position += -pos * 15
+	#position += -pos * 10
 	fireball.position = position
 	fireball.fireMode = intendedFireMode
 	fireball.can_penetrate = can_penetrate

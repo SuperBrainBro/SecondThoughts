@@ -27,6 +27,7 @@ func _ready() -> void:
 	player1.is_active = false
 	player2.is_active = true
 	
+
 	cam.playerCam = not cam.playerCam
 	
 	player1.intendedFireMode = false
@@ -47,7 +48,7 @@ func _process(_delta: float) -> void:
 		
 		player1.is_active = not player1.is_active
 		player2.is_active = not player2.is_active
-		
+
 		cam.playerCam = not cam.playerCam
 		
 		player1.intendedFireMode = false

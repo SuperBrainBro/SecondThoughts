@@ -5,13 +5,14 @@
 [ext_resource path="res://Player/Arrow.png" type="Texture" id=3]
 [ext_resource path="res://Shader/Shader.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 30.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 35, 35 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Players",
 ]]
-collision_layer = 2
+collision_layer = 3
+collision/safe_margin = 0.5
 script = ExtResource( 2 )
 health = 500.0
 acceleration = 10000.0
