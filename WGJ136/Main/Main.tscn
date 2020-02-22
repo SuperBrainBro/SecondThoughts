@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Other/soundFX.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Toad/Toad.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -80,7 +81,6 @@ acceleration = 0.0
 position = Vector2( 0, -50 )
 collision_layer = 1
 collision/safe_margin = 0.08
-speed = 1000.0
 acceleration = 0.0
 
 [node name="PowerupHolder" type="Node" parent="World"]
@@ -408,7 +408,7 @@ position = Vector2( -24, 32 )
 shape = SubResource( 9 )
 
 [node name="Continue" parent="World" instance=ExtResource( 6 )]
-position = Vector2( 416, 3784 )
+position = Vector2( 376, 5032 )
 scale = Vector2( 2, 2 )
 
 [node name="Camera" type="Node" parent="World"]
@@ -418,7 +418,189 @@ scale = Vector2( 2, 2 )
 [node name="Boss" type="Node" parent="World"]
 
 [node name="Toad" parent="World/Boss" instance=ExtResource( 12 )]
-position = Vector2( 724.395, 3673.8 )
+position = Vector2( 640, 3720 )
+
+[node name="Lights" type="Node" parent="World"]
+
+[node name="Torch" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -104, -360 )
+
+[node name="Torch2" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 152, -360 )
+
+[node name="Torch3" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -296, -360 )
+
+[node name="Torch4" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -552, -360 )
+
+[node name="Torch5" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -616, -40 )
+
+[node name="Torch6" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -680, -232 )
+
+[node name="Torch7" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -808, -232 )
+
+[node name="Torch8" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1000, -232 )
+
+[node name="Torch9" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1192, -232 )
+
+[node name="Torch10" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -870, -616 )
+
+[node name="Torch11" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1896, -616 )
+
+[node name="Torch12" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1896, 88 )
+
+[node name="Torch13" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1768, 88 )
+
+[node name="Torch14" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1960, 280 )
+
+[node name="Torch15" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -2152, 288 )
+
+[node name="Torch16" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1320, 480 )
+
+[node name="Torch17" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -1000, 472 )
+
+[node name="Torch18" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 216, -40 )
+
+[node name="Torch19" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 664, -40 )
+
+[node name="Torch20" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 88, 596 )
+
+[node name="Torch21" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 536, 596 )
+
+[node name="Torch22" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 728, 596 )
+
+[node name="Torch23" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1176, 600 )
+
+[node name="Torch24" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 472, 1688 )
+
+[node name="Torch25" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 536, 1688 )
+
+[node name="Torch26" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 728, 1688 )
+
+[node name="Torch27" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 88, 2912 )
+
+[node name="Torch28" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 536, 2904 )
+
+[node name="Torch29" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 735.68, 2904 )
+
+[node name="Torch30" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1240, 2912 )
+
+[node name="Torch31" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 920, -480 )
+
+[node name="Torch32" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1112, -488 )
+
+[node name="Torch33" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1176, -488 )
+
+[node name="Torch34" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1048, -872 )
+
+[node name="Torch35" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 728, -872 )
+
+[node name="Torch36" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 536, -872 )
+
+[node name="Torch37" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 210, -872 )
+
+[node name="Torch38" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 152, -1192 )
+
+[node name="Torch39" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( -552, -1192 )
+
+[node name="Torch40" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 408, -1640 )
+
+[node name="Torch41" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 536, -1632 )
+
+[node name="Torch42" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 728, -1640 )
+
+[node name="Torch43" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 856, -1640 )
+
+[node name="Torch44" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 920, -1512 )
+
+[node name="Torch45" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1112, -1512 )
+
+[node name="Torch46" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1368, -1960 )
+
+[node name="Torch47" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1112, -1960 )
+
+[node name="Torch48" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1048, -1960 )
+
+[node name="Torch49" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 920, -2216 )
+
+[node name="Torch50" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1240, -2216 )
+
+[node name="Torch51" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 856, -2352 )
+
+[node name="Torch52" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 728, -2352 )
+
+[node name="Torch53" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 792, -2920 )
+
+[node name="Torch54" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 472, -2928 )
+
+[node name="Torch55" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1432, -1832 )
+
+[node name="Torch56" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1816, -1832 )
+
+[node name="Torch57" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 1880, -1960 )
+
+[node name="Torch58" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 2264, -1960 )
+
+[node name="Torch59" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 2328, -2096 )
+
+[node name="Torch60" parent="World/Lights" instance=ExtResource( 13 )]
+position = Vector2( 2520, -2096 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GameOver = SubResource( 10 )
@@ -432,13 +614,8 @@ one_shot = true
 [node name="ScoreTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Cool Text - YOU WONThanks for playing 349674433397722" type="Sprite" parent="."]
-position = Vector2( 672, 3688 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 9 )
-
 [node name="Cool Text - YOU WONThanks for playing 349674433397723" type="Sprite" parent="."]
-position = Vector2( 672, 3688 )
+position = Vector2( 656, 4888 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 
@@ -456,11 +633,6 @@ texture = ExtResource( 8 )
 
 [node name="your cool!4" type="Sprite" parent="."]
 position = Vector2( 3296, 2984 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
-
-[node name="your cool!5" type="Sprite" parent="."]
-position = Vector2( 488, 4896 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 

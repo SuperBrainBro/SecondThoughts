@@ -6,7 +6,7 @@
 
 [node name="Player2" instance=ExtResource( 1 )]
 position = Vector2( 0, 8 )
-speed = 325.0
+max_speed = 325
 damage = 2.0
 acceleration = 1000.0
 

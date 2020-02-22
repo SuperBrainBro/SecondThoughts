@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 140, 125 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 resource_name = "toadBoss"
 length = 6.0
 tracks/0/type = "value"
@@ -19,11 +19,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 640, 500 ), Vector2( 180, 300 ), Vector2( 640, 500 ), Vector2( 1100, 300 ), Vector2( 640, 500 ), Vector2( 640, 200 ), Vector2( 640, 500 ) ]
+"values": [ Vector2( 680, 3720 ), Vector2( 220, 3520 ), Vector2( 680, 3720 ), Vector2( 1140, 3520 ), Vector2( 680, 3720 ), Vector2( 680, 3420 ), Vector2( 680, 3720 ) ]
 }
 
 [node name="Toad" type="KinematicBody2D"]
-position = Vector2( 640, 500 )
+position = Vector2( 680, 3720 )
 scale = Vector2( 1.25, 1.25 )
 collision_mask = 2
 script = ExtResource( 2 )
@@ -42,5 +42,8 @@ collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/toadBoss = SubResource( 2 )
+anims/toadBoss = SubResource( 3 )
+
+[node name="SpitPoint" type="Node2D" parent="."]
+position = Vector2( 7.03241, -112.518 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

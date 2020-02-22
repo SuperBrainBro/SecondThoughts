@@ -7,7 +7,7 @@ export var velocity: Vector2
 export var speed: float = 100
 
 onready var raycast: RayCast2D = $RayCast2D
-
+onready var spawnPlace: Node = $"/root/Main/World/FireballHolder"
 var prev_pos
 var screen_size = 1280
 
@@ -38,9 +38,9 @@ func _ready() -> void:
 
 func shoot():
 	var spit = SPIT.instance()
-	add_child(spit)
 	spit.direction = Vector2.UP
-
+	spit.pos = $SpitPoint.get_global_transform().get_origin()
+	spawnPlace.add_child(spit)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("toadBoss")
