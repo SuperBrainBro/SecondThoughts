@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Other/Cool Text - YOU WONThanks for playing 349674433397722.png" type="Texture" id=9]
 [ext_resource path="res://Other/soundFX.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Toad/Toad.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -79,6 +80,7 @@ acceleration = 0.0
 position = Vector2( 0, -50 )
 collision_layer = 1
 collision/safe_margin = 0.08
+speed = 1000.0
 acceleration = 0.0
 
 [node name="PowerupHolder" type="Node" parent="World"]
@@ -413,6 +415,11 @@ scale = Vector2( 2, 2 )
 
 [node name="NewCamera" parent="World/Camera" instance=ExtResource( 4 )]
 
+[node name="Boss" type="Node" parent="World"]
+
+[node name="Toad" parent="World/Boss" instance=ExtResource( 12 )]
+position = Vector2( 724.395, 3673.8 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/GameOver = SubResource( 10 )
 
@@ -436,11 +443,6 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 9 )
 
 [node name="soundFX" parent="." instance=ExtResource( 10 )]
-
-[node name="your cool!" type="Sprite" parent="."]
-position = Vector2( -1416, 1208 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 8 )
 
 [node name="your cool!2" type="Sprite" parent="."]
 position = Vector2( 3008, -960 )
