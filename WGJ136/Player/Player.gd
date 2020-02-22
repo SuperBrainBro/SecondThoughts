@@ -42,11 +42,11 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		is_dead = true
 		emit_signal("died")
-	if player1.is_dead and player2.is_dead:
+	if is_dead: #player1.is_dead and player2.is_dead
 		($"../../../ScoreTimer" as Timer).stop()
 		$"../../../CanvasLayer/Control/GameOverScreen".show()
 	if is_dead:
-		return	
+		return
 	
 	if Input.is_action_just_pressed("attack") and is_active:
 		var fireball = FIREBALL_SCENE.instance()
