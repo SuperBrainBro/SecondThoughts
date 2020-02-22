@@ -65,6 +65,26 @@ _global_script_classes=[ {
 "path": "res://Player/Player.gd"
 }, {
 "base": "Node",
+"class": "Script1",
+"language": "GDScript",
+"path": "res://Other/bug/Script1.gd"
+}, {
+"base": "Node",
+"class": "Script2",
+"language": "GDScript",
+"path": "res://Other/bug/Script2.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Toad",
+"language": "GDScript",
+"path": "res://Toad/Toad.gd"
+}, {
+"base": "Area2D",
+"class": "ToadSpit",
+"language": "GDScript",
+"path": "res://Toad/ToadSpit.gd"
+}, {
+"base": "Node",
 "class": "soundFX",
 "language": "GDScript",
 "path": "res://Other/soundFX.gd"
@@ -81,6 +101,10 @@ _global_script_class_icons={
 "Main": "",
 "PenetrationPowerup": "",
 "Player": "",
+"Script1": "",
+"Script2": "",
+"Toad": "",
+"ToadSpit": "",
 "soundFX": ""
 }
 
