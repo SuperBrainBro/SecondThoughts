@@ -33,3 +33,8 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Recoil" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="Recoil" to="." method="_on_Recoil_timeout"]

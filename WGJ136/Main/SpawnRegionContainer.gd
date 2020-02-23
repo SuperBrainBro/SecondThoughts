@@ -103,8 +103,11 @@ func _on_SpawnRegion11_body_entered(body):
 #	playerExitRegion(body, 11)
 
 func playerEnterRegion(body, num):
-	var typeNode = body.get_class()
-	if not typeNode == "KinematicBody2D":
+	if body.is_in_group("Players"):
+		if not body.is_active:
+			print("Player Entered, But Player Was Not Active")
+			return
+	else:
 		return
 	
 	if num == 1:

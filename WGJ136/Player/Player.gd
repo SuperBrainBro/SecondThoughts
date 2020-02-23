@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name Player
 
+export var recoil: Vector2 = Vector2.ZERO
 export (int) var speed = 200
 
 signal died()
@@ -26,6 +27,7 @@ export var can_penetrate: bool
 
 export var followMouse: bool = true
 
+onready var recoilTimer: Timer = $Recoil
 onready var spr: Sprite = $Sprite
 onready var cam: CameraMain = $"/root/Main/World/Camera/NewCamera"
 var health_bar: TextureProgress
@@ -50,38 +52,29 @@ func _process(_delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("attack") and is_active:
-		var fireball = FIREBALL_SCENE.instance()
-		fireball.direction = position.direction_to(get_global_mouse_position())
-		followMouse = true
-		#position += -fireball.direction * 15
-		fireball.position = position
-		fireball.fireMode = intendedFireMode
-		fireball.can_penetrate = can_penetrate
-		fireball.damage = damage
-		$"../../FireballHolder".add_child(fireball)
-		cam.shake(0.3,64,11)
+		mouseShoot()
 	if Input.is_action_just_pressed("shoot_left") and is_active:
-		shoot(Vector2(-1, 0))
+		directionalShoot(Vector2(-1, 0))
 	if Input.is_action_just_pressed("shoot_right") and is_active:
-		shoot(Vector2(1, 0))
+		directionalShoot(Vector2(1, 0))
 	if Input.is_action_just_pressed("shoot_up") and is_active:
-		shoot(Vector2(0, -1))
+		directionalShoot(Vector2(0, -1))
 	if Input.is_action_just_pressed("shoot_down") and is_active:
-		shoot(Vector2(0, 1))
+		directionalShoot(Vector2(0, 1))
 		
 func _physics_process(_delta):
 	if not is_active:
 		if is_frostbite:
-			player1.collider.scale = Vector2(1, 1)
-			player2.collider.scale = Vector2(.075, .075)
+			player2.collider.scale = Vector2(1, 1)
+			player1.collider.scale = Vector2(.075, .075)
 			player1.z_index = 0
 			player2.z_index = 1
 			linear_velocity = position.direction_to(player2.position)
 			spr.look_at(player2.position)
 			linear_velocity = linear_velocity.normalized() * speed/1.75
 		else:
-			player1.collider.scale = Vector2(.075, .075)
-			player2.collider.scale = Vector2(1, 1)
+			player2.collider.scale = Vector2(.075, .075)
+			player1.collider.scale = Vector2(1, 1)
 			player2.z_index = 0
 			player1.z_index = 1
 			linear_velocity = position.direction_to(player1.position)
@@ -98,20 +91,34 @@ func _physics_process(_delta):
 		spr.look_at(get_global_mouse_position())
 		
 	get_input()
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity + recoil)
 	
-func shoot(pos: Vector2):
+func directionalShoot(pos: Vector2):
 	var fireball = FIREBALL_SCENE.instance()
 	fireball.direction = pos
 	followMouse = false
 	spr.look_at(position+pos)
-	#position += -pos * 10
 	fireball.position = position
 	fireball.fireMode = intendedFireMode
 	fireball.can_penetrate = can_penetrate
 	fireball.damage = damage
 	$"../../FireballHolder".add_child(fireball)
 	cam.shake(0.3,64,11)
+	recoilTimer.start(.1)
+	recoil = -pos * speed/2.5
+
+func mouseShoot():
+	var fireball = FIREBALL_SCENE.instance()
+	fireball.direction = position.direction_to(get_global_mouse_position())
+	followMouse = true
+	fireball.position = position
+	fireball.fireMode = intendedFireMode
+	fireball.can_penetrate = can_penetrate
+	fireball.damage = damage
+	$"../../FireballHolder".add_child(fireball)
+	cam.shake(0.3,64,11)
+	recoilTimer.start(.1)
+	recoil = -fireball.direction * speed/2.5
 
 func get_input():
     velocity = Vector2()
@@ -124,3 +131,7 @@ func get_input():
     if Input.is_action_pressed("move_up"):
         velocity.y -= 1
     velocity = velocity.normalized() * speed
+
+func _on_Recoil_timeout():
+	print("Recoil Done ")
+	recoil = Vector2.ZERO

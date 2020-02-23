@@ -8,7 +8,6 @@ var kill_timer = Timer.new()
 
 func _ready() -> void:
 	position = pos
-	print("Toad Spit")
 	$Sprite.z_index = 5
 	kill_timer.autostart = true
 	kill_timer.wait_time = 1.5

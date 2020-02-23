@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 140, 125 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "toadBoss"
 length = 6.0
 tracks/0/type = "value"
@@ -42,7 +42,7 @@ collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/toadBoss = SubResource( 3 )
+anims/toadBoss = SubResource( 2 )
 
 [node name="SpitPoint" type="Node2D" parent="."]
 position = Vector2( 7.03241, -112.518 )
