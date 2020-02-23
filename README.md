@@ -2,13 +2,7 @@
  A game my friends and I created for Weekly Game Jam 136.
  
  ## To Do:
-  * Make End Screen
-  * Rework enemy spawning
-  * Add rapidfire powerup
-  * Add super-shot/penetration shot powerup
-  * Add Toad Boss
-  * Fix camera switching - very abrupt (perhaps interpolate camera)
-  * Add Credits
+  * MULTIPLAYER!!!! SO HARD!!
 
 ## Doing:
   
@@ -19,3 +13,9 @@
   * Add Chests with random powerups
   * Make Title Screen
   * Add Dungeon
+  * Make End Screen
+  * Rework enemy spawning
+  * Add Toad Boss
+  * Fix camera switching - very abrupt (perhaps interpo!late camera)
+  * Add Credits
+  * Add super-shot/penetration shot powerup
