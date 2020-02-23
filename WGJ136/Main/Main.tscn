@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Dungeon/Dungeon.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Toad/Toad.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Main/SpawnRegion.gd" type="Script" id=14]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -110,6 +111,7 @@ script = ExtResource( 5 )
 
 [node name="SpawnRegion" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( -200, 0 )
+script = ExtResource( 14 )
 
 [node name="Position2D" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion"]
 position = Vector2( -304, -248 )
@@ -123,6 +125,7 @@ shape = SubResource( 1 )
 
 [node name="SpawnRegion2" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( -904, 0 )
+script = ExtResource( 14 )
 
 [node name="Position2D3" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion2"]
 position = Vector2( -256, -64 )
@@ -136,6 +139,7 @@ shape = SubResource( 2 )
 
 [node name="SpawnRegion3" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( -1608, 344 )
+script = ExtResource( 14 )
 
 [node name="Position2D5" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion3"]
 position = Vector2( -248, 232 )
@@ -155,6 +159,7 @@ shape = SubResource( 3 )
 
 [node name="SpawnRegion4" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( -1608, -352 )
+script = ExtResource( 14 )
 
 [node name="Position2D9" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion4"]
 position = Vector2( 200, 224 )
@@ -174,6 +179,7 @@ shape = SubResource( 3 )
 
 [node name="SpawnRegion5" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( -168, -832 )
+script = ExtResource( 14 )
 
 [node name="Position2D13" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion5"]
 position = Vector2( -344, 320 )
@@ -193,6 +199,7 @@ shape = SubResource( 4 )
 
 [node name="SpawnRegion6" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 656, -1408 )
+script = ExtResource( 14 )
 
 [node name="Position2D17" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion6"]
 position = Vector2( -216, 192 )
@@ -209,6 +216,7 @@ shape = SubResource( 5 )
 
 [node name="SpawnRegion7" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 656, -2112 )
+script = ExtResource( 14 )
 
 [node name="Position2D20" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion7"]
 position = Vector2( -208, -64 )
@@ -225,6 +233,7 @@ shape = SubResource( 5 )
 
 [node name="SpawnRegion8" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 1048, -320 )
+script = ExtResource( 14 )
 
 [node name="Position2D23" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion8"]
 position = Vector2( -152, 192 )
@@ -244,6 +253,7 @@ shape = SubResource( 6 )
 
 [node name="SpawnRegion9" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 1240, -1792 )
+script = ExtResource( 14 )
 
 [node name="SpawnRect" type="CollisionShape2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion9"]
 position = Vector2( -24, 32 )
@@ -260,6 +270,7 @@ position = Vector2( 104, 128 )
 
 [node name="SpawnRegion10" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 656, 1023 )
+script = ExtResource( 14 )
 
 [node name="Position2D27" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion10"]
 position = Vector2( -352, 377 )
@@ -363,6 +374,7 @@ shape = SubResource( 8 )
 
 [node name="SpawnRegion11" type="Area2D" parent="World/SpawnLocations/SpawnRegionContainer"]
 position = Vector2( 664, 2168 )
+script = ExtResource( 14 )
 
 [node name="Position2D59" type="Position2D" parent="World/SpawnLocations/SpawnRegionContainer/SpawnRegion11"]
 position = Vector2( 104, 448 )
@@ -661,24 +673,13 @@ position = Vector2( 2880, -3184 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 8 )
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion2" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion2_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion2" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion2_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion3" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion3_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion3" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion3_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion4" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion4_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion4" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion4_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion5" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion5_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion5" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion5_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion6" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion6_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion6" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion6_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion7" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion7_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion7" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion7_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion8" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion8_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion8" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion8_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion9" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion9_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion9" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion9_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion10" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion10_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion10" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion10_body_exited"]
 [connection signal="body_entered" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion11" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion11_body_entered"]
-[connection signal="body_exited" from="World/SpawnLocations/SpawnRegionContainer/SpawnRegion11" to="World/SpawnLocations/SpawnRegionContainer" method="_on_SpawnRegion11_body_exited"]

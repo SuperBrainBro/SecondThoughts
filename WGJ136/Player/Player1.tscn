@@ -10,7 +10,6 @@ colors = PoolColorArray( 0, 0, 0, 1, 0.487015, 0.459824, 0.957031, 1, 0.697083, 
 
 [node name="Player1" instance=ExtResource( 1 )]
 position = Vector2( 0.663391, -0.663422 )
-max_speed = 275
 damage = 0.7
 is_frostbite = true
 acceleration = 1000.0

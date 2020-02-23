@@ -35,8 +35,11 @@ func _ready() -> void:
 	
 	if not instructions:
 		$CanvasLayer/Control/GameOverScreen.hide()
+# warning-ignore:return_value_discarded
 		$SpawnTimer.connect("timeout", self, "_on_SpawnTimer_timeout")
+# warning-ignore:return_value_discarded
 		$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
+# warning-ignore:return_value_discarded
 		$CanvasLayer/Control/GameOverScreen/PlayAgainButton.connect("pressed", self, "_on_PlayAgainButton_Pressed")
 	
 func _process(_delta: float) -> void:
@@ -75,4 +78,5 @@ func _on_ScoreTimer_timeout():
 	
 func _on_PlayAgainButton_Pressed() -> void:
 	if not instructions:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene("res://Main/Main.tscn")

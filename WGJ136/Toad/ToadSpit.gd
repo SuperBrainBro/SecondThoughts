@@ -14,6 +14,7 @@ func _ready() -> void:
 	kill_timer.wait_time = 1.5
 	add_child(kill_timer)
 	kill_timer.connect("timeout", self, "queue_free")
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_body_entered")
 
 func _physics_process(delta: float) -> void:

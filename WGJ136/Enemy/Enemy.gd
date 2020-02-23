@@ -28,11 +28,12 @@ func _ready() -> void:
 	#$HealthBar.max_value = health
 	#$HealthBar.value = health
 	target_player = player1 if randf() > 0.5 else player2
+# warning-ignore:return_value_discarded
 	$ShootTimer.connect("timeout", self, "shoot")
 	player1.connect("died", self, "queue_free")
 	player2.connect("died", self, "queue_free")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	#$HealthBar.value = health
 	if frozen == true:
 		return
@@ -47,6 +48,7 @@ func _physics_process(delta: float) -> void:
 				collider.health -= damage
 		linear_velocity += position.direction_to(target_player.position)
 		linear_velocity = linear_velocity.normalized() * follow_speed
+# warning-ignore:return_value_discarded
 		move_and_slide(linear_velocity)
 
 func _process(_delta: float) -> void:

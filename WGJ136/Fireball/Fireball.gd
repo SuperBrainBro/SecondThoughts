@@ -2,7 +2,7 @@ extends Area2D
 class_name Fireball
 
 export var direction: Vector2
-export var speed: float = 650
+export var speed: float = 250
 export var damage: float
 export var fireMode: bool = true
 export var can_penetrate: bool
@@ -11,7 +11,9 @@ onready var audioFX: soundFX = $"/root/Main/soundFX"
 
 func _ready():
 	print(damage)
+# warning-ignore:return_value_discarded
 	$DespawnTimer.connect("timeout", self, "despawn")
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_Fireball_body_entered")
 	if fireMode == true:
 		print('fireMode is 1')
@@ -28,6 +30,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	position += direction * speed * delta
+	speed += .045 * (speed/2.1) + (speed/125)
 
 func _on_Fireball_body_entered(body: PhysicsBody2D) -> void:
 	if body is Enemy:

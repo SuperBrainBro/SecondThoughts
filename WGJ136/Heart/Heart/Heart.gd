@@ -2,6 +2,7 @@ extends Area2D
 class_name Heart
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "on_Heart_body_entered")
 
 func on_Heart_body_entered(body: PhysicsBody2D):

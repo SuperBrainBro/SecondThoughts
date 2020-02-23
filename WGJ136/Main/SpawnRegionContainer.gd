@@ -15,6 +15,19 @@ onready var region11: Area2D = $SpawnRegion11
 onready var timer: Timer = $"/root/Main/SpawnTimer"
 onready var main: Main = $"/root/Main"
 
+func _ready():
+	region1.rect.set_deferred("disabled", false)
+	region2.rect.set_deferred("disabled", false)
+	region3.rect.set_deferred("disabled", false)
+	region4.rect.set_deferred("disabled", false)
+	region5.rect.set_deferred("disabled", false)
+	region6.rect.set_deferred("disabled", false)
+	region7.rect.set_deferred("disabled", false)
+	region8.rect.set_deferred("disabled", false)
+	region9.rect.set_deferred("disabled", false)
+	region10.rect.set_deferred("disabled", false)
+	region11.rect.set_deferred("disabled", false)
+	
 func _on_SpawnRegion_body_entered(body):
 	playerEnterRegion(body, 1)
 
@@ -56,45 +69,44 @@ func _on_SpawnRegion10_body_entered(body):
 func _on_SpawnRegion11_body_entered(body):
 	playerEnterRegion(body, 11)
 
-func _on_SpawnRegion_body_exited(body):
-	playerExitRegion(body, 1)
-
-func _on_SpawnRegion2_body_exited(body):
-	playerExitRegion(body, 2)
-
-func _on_SpawnRegion3_body_exited(body):
-	playerExitRegion(body, 3)
-
-func _on_SpawnRegion4_body_exited(body):
-	playerExitRegion(body, 4)
-
-func _on_SpawnRegion5_body_exited(body):
-	playerExitRegion(body, 5)
-
-func _on_SpawnRegion6_body_exited(body):
-	playerExitRegion(body, 6)
-
-func _on_SpawnRegion7_body_exited(body):
-	playerExitRegion(body,67)
-
-func _on_SpawnRegion8_body_exited(body):
-	playerExitRegion(body, 8)
-
-func _on_SpawnRegion9_body_exited(body):
-	playerExitRegion(body, 9)
-
-func _on_SpawnRegion10_body_exited(body):
-	playerExitRegion(body, 10)
-	
-func _on_SpawnRegion11_body_exited(body):
-	playerExitRegion(body, 11)
+#func _on_SpawnRegion_body_exited(body):
+#	playerExitRegion(body, 1)
+#
+#func _on_SpawnRegion2_body_exited(body):
+#	playerExitRegion(body, 2)
+#
+#func _on_SpawnRegion3_body_exited(body):
+#	playerExitRegion(body, 3)
+#
+#func _on_SpawnRegion4_body_exited(body):
+#	playerExitRegion(body, 4)
+#
+#func _on_SpawnRegion5_body_exited(body):
+#	playerExitRegion(body, 5)
+#
+#func _on_SpawnRegion6_body_exited(body):
+#	playerExitRegion(body, 6)
+#
+#func _on_SpawnRegion7_body_exited(body):
+#	playerExitRegion(body,67)
+#
+#func _on_SpawnRegion8_body_exited(body):
+#	playerExitRegion(body, 8)
+#
+#func _on_SpawnRegion9_body_exited(body):
+#	playerExitRegion(body, 9)
+#
+#func _on_SpawnRegion10_body_exited(body):
+#	playerExitRegion(body, 10)
+#
+#func _on_SpawnRegion11_body_exited(body):
+#	playerExitRegion(body, 11)
 
 func playerEnterRegion(body, num):
 	var typeNode = body.get_class()
 	if not typeNode == "KinematicBody2D":
 		return
-		
-		
+	
 	if num == 1:
 		if timer.time_left == 0:
 			spawn(num)
@@ -130,32 +142,13 @@ func playerEnterRegion(body, num):
 			spawn(num)
 	
 	print("Player Entered")
+
+#func playerExitRegion(body):
+#	var typeNode = body.get_class()
+#	if not typeNode == "KinematicBody2D":
+#		return
+#	print("Player Exited")
 	
-func playerExitRegion(body, num):
-	var typeNode = body.get_class()
-	if not typeNode == "KinematicBody2D":
-		return
-	print("Player Exited")
-
-
-func _on_SpawnTimer_timeout():
-	return
-#	for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion".get_children():
-#			if(spawn_location is Position2D): 
-#				var enemy: Enemy
-#				var rand_num = round(rand_range(0, 4))
-#				if rand_num == 0:
-#					enemy = main.FIRE_ARCHER_SCENE.instance()
-#				elif rand_num == 1 or rand_num == 2:
-#					enemy = main.SKELETON_SCENE.instance()
-#				else:
-#					enemy = main.OGRE_SCENE.instance()
-#				enemy.position = spawn_location.position
-#				$"/root/Main/World/EnemyHolder".add_child(enemy)
-#				timer.start(3)
-#			else:
-#				return
-
 func spawn(numb):
 		match(numb):
 			1: for spawn_location in $"/root/Main/World/SpawnLocations/SpawnRegionContainer/SpawnRegion".get_children():
