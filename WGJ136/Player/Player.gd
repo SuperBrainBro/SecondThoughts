@@ -66,20 +66,20 @@ func _physics_process(_delta):
 	if not is_active:
 		if is_frostbite:
 			player2.collider.scale = Vector2(1, 1)
-			player1.collider.scale = Vector2(.075, .075)
+			player1.collider.scale = Vector2(.025, .025)
 			player1.z_index = 0
 			player2.z_index = 1
 			linear_velocity = position.direction_to(player2.position)
 			spr.look_at(player2.position)
-			linear_velocity = linear_velocity.normalized() * speed/1.75
+			linear_velocity = linear_velocity.normalized() * (250)
 		else:
-			player2.collider.scale = Vector2(.075, .075)
+			player2.collider.scale = Vector2(.025, .025)
 			player1.collider.scale = Vector2(1, 1)
 			player2.z_index = 0
 			player1.z_index = 1
 			linear_velocity = position.direction_to(player1.position)
 			spr.look_at(player1.position)
-			linear_velocity = linear_velocity.normalized() * speed/1.75
+			linear_velocity = linear_velocity.normalized() * (250)
 		if is_dead:
 			return
 # warning-ignore:return_value_discarded

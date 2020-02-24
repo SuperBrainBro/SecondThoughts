@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemy/FixedSprites/Firestalker_facesprite_04.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/FixedSprites/frost_facesprite_01.png" type="Texture" id=2]
 [ext_resource path="res://Other/font48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Objects/Need a key.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Other/health_meter_02.png" type="Texture" id=5]
 [ext_resource path="res://Other/health_meter_01.png" type="Texture" id=6]
+[ext_resource path="res://Other/GameCanvas.gd" type="Script" id=7]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="GameCanvas" type="CanvasLayer"]
+script = ExtResource( 7 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -17,8 +20,7 @@ __meta__ = {
 
 [node name="GameOverScreen" type="ColorRect" parent="Control"]
 visible = false
-margin_left = 1.58667
-margin_right = 1281.59
+margin_right = 1278.41
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -113,3 +115,6 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NeedAKey" parent="." instance=ExtResource( 4 )]
+visible = false

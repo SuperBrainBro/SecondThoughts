@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Fireball/Fireball.gd"
 }, {
+"base": "CanvasLayer",
+"class": "GameCanvas",
+"language": "GDScript",
+"path": "res://Other/GameCanvas.gd"
+}, {
 "base": "Area2D",
 "class": "Heart",
 "language": "GDScript",
@@ -97,6 +102,7 @@ _global_script_class_icons={
 "EnemyFireball": "",
 "EnemyOld": "",
 "Fireball": "",
+"GameCanvas": "",
 "Heart": "",
 "Main": "",
 "PenetrationPowerup": "",

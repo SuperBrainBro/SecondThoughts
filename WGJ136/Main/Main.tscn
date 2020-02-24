@@ -106,7 +106,7 @@ position = Vector2( 1024, -240 )
 whatPowerup = "damage"
 
 [node name="LockedDoor" parent="World/Objects" instance=ExtResource( 15 )]
-position = Vector2( 637.1, 161.46 )
+position = Vector2( 636.08, 161.056 )
 
 [node name="SpawnLocations" type="Node" parent="World"]
 
@@ -626,9 +626,6 @@ anims/GameOver = SubResource( 10 )
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
-
-[node name="ScoreTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="Cool Text - YOU WONThanks for playing 349674433397723" type="Sprite" parent="."]
 position = Vector2( 656, 4888 )

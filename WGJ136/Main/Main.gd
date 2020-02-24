@@ -34,11 +34,6 @@ func _ready() -> void:
 	player2.intendedFireMode = true
 	
 	if not instructions:
-		$CanvasLayer/Control/GameOverScreen.hide()
-# warning-ignore:return_value_discarded
-		$SpawnTimer.connect("timeout", self, "_on_SpawnTimer_timeout")
-# warning-ignore:return_value_discarded
-		$ScoreTimer.connect("timeout", self, "_on_ScoreTimer_timeout")
 # warning-ignore:return_value_discarded
 		$CanvasLayer/Control/GameOverScreen/PlayAgainButton.connect("pressed", self, "_on_PlayAgainButton_Pressed")
 	
@@ -56,25 +51,6 @@ func _process(_delta: float) -> void:
 		
 		player1.intendedFireMode = false
 		player2.intendedFireMode = true
-
-func _on_SpawnTimer_timeout():
-	if not instructions:
-		return
-		#for spawn_location in $"SpawnLocations".get_children():
-			#var enemy: Enemy
-			#var rand_num = round(rand_range(0, 4))
-			#if rand_num == 0:
-			#	enemy = FIRE_ARCHER_SCENE.instance()
-			#elif rand_num == 1 or rand_num == 2:
-			#	enemy = SKELETON_SCENE.instance()
-			#else:
-			#	enemy = OGRE_SCENE.instance()
-			#enemy.position = spawn_location.position
-			#$"/root/Main/World/EnemyHolder".add_child(enemy)
-
-func _on_ScoreTimer_timeout():
-	if not instructions:
-		return
 	
 func _on_PlayAgainButton_Pressed() -> void:
 	if not instructions:
