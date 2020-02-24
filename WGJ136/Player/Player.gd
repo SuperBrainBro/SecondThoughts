@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 		is_dead = true
 		emit_signal("died")
 	if is_dead: #player1.is_dead and player2.is_dead
-		($"../../../ScoreTimer" as Timer).stop()
+		#($"../../../ScoreTimer" as Timer).stop()
 		$"../../../CanvasLayer/Control/GameOverScreen".show()
 	if is_dead:
 		return
