@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Main/SpawnRegion.gd" type="Script" id=14]
 [ext_resource path="res://Objects/LockedDoor.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Chest/Chest.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 384, 352 )
@@ -107,6 +108,9 @@ whatPowerup = "damage"
 
 [node name="LockedDoor" parent="World/Objects" instance=ExtResource( 15 )]
 position = Vector2( 636.08, 161.056 )
+
+[node name="Key" parent="World/Objects" instance=ExtResource( 17 )]
+position = Vector2( 2520, -1768 )
 
 [node name="SpawnLocations" type="Node" parent="World"]
 

@@ -10,14 +10,15 @@ func _ready():
 	spr.z_index = 2
 
 func _on_Area2D_body_entered(body):
-	if body.is_in_group("Players"):
-		if not body.is_active:
-			print("Player Entered Locked Area, But Player Was Not Active")
-			return
-	else:
+	if not body.is_in_group("Players"):
 		return
-	
-	keyOverlay.NeedAKey.show()
+	if not body.is_active:
+		print("Player Entered Locked Area, But Player Was Not Active")
+		return
+	if not body.has_key:
+		keyOverlay.NeedAKey.show()
+	else:
+		statBod.queue_free()
 
 func _on_Area2D_body_exited(body):
 	if body.is_in_group("Players"):

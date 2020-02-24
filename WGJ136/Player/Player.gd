@@ -26,6 +26,7 @@ export var is_dead: bool = false
 export var can_penetrate: bool
 
 export var followMouse: bool = true
+export var has_key: bool = false
 
 onready var recoilTimer: Timer = $Recoil
 onready var spr: Sprite = $Sprite
@@ -121,16 +122,16 @@ func mouseShoot():
 	recoil = -fireball.direction * speed/2.5
 
 func get_input():
-    velocity = Vector2()
-    if Input.is_action_pressed("move_right"):
-        velocity.x += 1
-    if Input.is_action_pressed("move_left"):
-        velocity.x -= 1
-    if Input.is_action_pressed("move_down"):
-        velocity.y += 1
-    if Input.is_action_pressed("move_up"):
-        velocity.y -= 1
-    velocity = velocity.normalized() * speed
+	velocity = Vector2()
+	if Input.is_action_pressed("move_right"):
+		velocity.x += 1
+	if Input.is_action_pressed("move_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= 1
+	velocity = velocity.normalized() * speed
 
 func _on_Recoil_timeout():
 	print("Recoil Done ")
